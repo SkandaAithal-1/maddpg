@@ -1,0 +1,342 @@
+100%|██████████████████████████████████████████████████| 10/10 [00:00<00:00, 73.39it/s, Warming up...]                                                                                 
+  5%|██▌                                               | 10000/200000 [00:59<08:03, 392.89it/s, eval_return=-43.84]                                                                    
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]

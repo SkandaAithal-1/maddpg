@@ -1,0 +1,16 @@
+{"time":"2024-11-10T21:01:19.430457824+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T21:01:19.430484192+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/run-20241110_210119-x0roju3d/logs/debug-core.log"}
+{"time":"2024-11-10T21:01:19.534750157+05:30","level":"INFO","msg":"created new stream","id":"x0roju3d"}
+{"time":"2024-11-10T21:01:19.534767503+05:30","level":"INFO","msg":"stream: started","id":"x0roju3d"}
+{"time":"2024-11-10T21:01:19.534783977+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"x0roju3d"}}
+{"time":"2024-11-10T21:01:19.534885215+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"x0roju3d"}}
+{"time":"2024-11-10T21:01:19.534915554+05:30","level":"INFO","msg":"sender: started","stream_id":"x0roju3d"}
+{"time":"2024-11-10T21:01:20.048279342+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T21:01:27.986315099+05:30","level":"INFO","msg":"stream: closing","id":"x0roju3d"}
+{"time":"2024-11-10T21:01:27.986331947+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T21:01:27.986677401+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T21:01:33.355786869+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-10T21:01:33.825710868+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"x0roju3d"}}
+{"time":"2024-11-10T21:01:33.825802497+05:30","level":"INFO","msg":"sender: closed","stream_id":"x0roju3d"}
+{"time":"2024-11-10T21:01:33.825778789+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"x0roju3d"}}
+{"time":"2024-11-10T21:01:33.826002866+05:30","level":"INFO","msg":"stream: closed","id":"x0roju3d"}

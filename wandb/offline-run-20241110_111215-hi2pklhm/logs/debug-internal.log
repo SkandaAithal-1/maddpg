@@ -1,0 +1,15 @@
+{"time":"2024-11-10T11:12:15.300013788+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T11:12:15.300029234+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_111215-hi2pklhm/logs/debug-core.log"}
+{"time":"2024-11-10T11:12:15.403459971+05:30","level":"INFO","msg":"created new stream","id":"hi2pklhm"}
+{"time":"2024-11-10T11:12:15.403503702+05:30","level":"INFO","msg":"stream: started","id":"hi2pklhm"}
+{"time":"2024-11-10T11:12:15.403575254+05:30","level":"INFO","msg":"sender: started","stream_id":"hi2pklhm"}
+{"time":"2024-11-10T11:12:15.403580641+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"hi2pklhm"}}
+{"time":"2024-11-10T11:12:15.403552691+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hi2pklhm"}}
+{"time":"2024-11-10T11:12:15.419394814+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T11:20:38.049744684+05:30","level":"INFO","msg":"stream: closing","id":"hi2pklhm"}
+{"time":"2024-11-10T11:20:38.049770655+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T11:20:38.050183163+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T11:20:38.050328627+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"hi2pklhm"}}
+{"time":"2024-11-10T11:20:38.050345169+05:30","level":"INFO","msg":"sender: closed","stream_id":"hi2pklhm"}
+{"time":"2024-11-10T11:20:38.050344626+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hi2pklhm"}}
+{"time":"2024-11-10T11:20:38.050408026+05:30","level":"INFO","msg":"stream: closed","id":"hi2pklhm"}

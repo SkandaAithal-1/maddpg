@@ -1,0 +1,26 @@
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Current SDK version is 0.18.6
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Configure stats pid to 84382
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Loading settings from /home/skanda/.config/wandb/settings
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Loading settings from /home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/settings
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': 'offline', '_disable_service': None}
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'main.py', 'program_abspath': '/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py', 'program': '/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py'}
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_init.py:_log_setup():533] Logging user logs to /home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_113144-oax5zj6p/logs/debug.log
+2024-11-10 11:31:44,411 INFO    MainThread:84382 [wandb_init.py:_log_setup():534] Logging internal logs to /home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_113144-oax5zj6p/logs/debug-internal.log
+2024-11-10 11:31:44,412 INFO    MainThread:84382 [wandb_init.py:init():619] calling init triggers
+2024-11-10 11:31:44,412 INFO    MainThread:84382 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {}
+2024-11-10 11:31:44,412 INFO    MainThread:84382 [wandb_init.py:init():669] starting backend
+2024-11-10 11:31:44,412 INFO    MainThread:84382 [wandb_init.py:init():673] sending inform_init request
+2024-11-10 11:31:44,417 INFO    MainThread:84382 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-11-10 11:31:44,417 INFO    MainThread:84382 [wandb_init.py:init():686] backend started and connected
+2024-11-10 11:31:44,422 INFO    MainThread:84382 [wandb_init.py:init():781] updated telemetry
+2024-11-10 11:31:44,424 INFO    MainThread:84382 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2024-11-10 11:31:44,534 INFO    MainThread:84382 [wandb_init.py:init():867] starting run threads in backend
+2024-11-10 11:31:44,632 INFO    MainThread:84382 [wandb_run.py:_console_start():2451] atexit reg
+2024-11-10 11:31:44,633 INFO    MainThread:84382 [wandb_run.py:_redirect():2299] redirect: wrap_raw
+2024-11-10 11:31:44,633 INFO    MainThread:84382 [wandb_run.py:_redirect():2364] Wrapping output streams.
+2024-11-10 11:31:44,633 INFO    MainThread:84382 [wandb_run.py:_redirect():2389] Redirects installed.
+2024-11-10 11:31:44,633 INFO    MainThread:84382 [wandb_init.py:init():911] run started, returning control to user process
+2024-11-10 11:31:44,634 INFO    MainThread:84382 [wandb_run.py:_config_callback():1389] config_cb None None {'config_file': '', 'env': 'grid_world', 'seed': 0, 'warmup_episodes': 10, 'replay_buffer_size': 2000000, 'total_steps': 2000000, 'max_episode_length': 100, 'train_repeats': 5, 'batch_size': 512, 'hidden_dim_width': 64, 'critic_lr': 0.0003, 'actor_lr': 0.0003, 'gradient_clip': 1.0, 'gamma': 0.95, 'soft_update_size': 0.01, 'policy_regulariser': 0.001, 'reward_per_agent': False, 'standardise_rewards': False, 'eval_freq': 50000, 'eval_iterations': 100, 'gradient_estimator': 'gst', 'gumbel_temp': 1.0, 'rao_k': 1, 'gst_gap': 0.7, 'tags_start': 5.0, 'tags_end': 0.5, 'tags_period': 2000000, 'save_agents': False, 'pretrained_agents': '', 'just_demo_agents': False, 'render': False, 'disable_training': False, 'wandb_project_name': 'maddpg-sink-project', 'disable_wandb': False, 'offline_wandb': True, 'log_grad_variance': False, 'log_grad_variance_interval': 1000}
+2024-11-10 11:31:54,704 WARNING MsgRouterThr:84382 [router.py:message_loop():75] message_loop has been closed

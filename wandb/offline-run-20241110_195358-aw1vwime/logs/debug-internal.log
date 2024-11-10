@@ -1,0 +1,15 @@
+{"time":"2024-11-10T19:53:58.890956885+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T19:53:58.890981322+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_195358-aw1vwime/logs/debug-core.log"}
+{"time":"2024-11-10T19:53:58.994638721+05:30","level":"INFO","msg":"created new stream","id":"aw1vwime"}
+{"time":"2024-11-10T19:53:58.994663501+05:30","level":"INFO","msg":"stream: started","id":"aw1vwime"}
+{"time":"2024-11-10T19:53:58.994713617+05:30","level":"INFO","msg":"sender: started","stream_id":"aw1vwime"}
+{"time":"2024-11-10T19:53:58.99475482+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"aw1vwime"}}
+{"time":"2024-11-10T19:53:58.994712989+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"aw1vwime"}}
+{"time":"2024-11-10T19:53:59.002737511+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T19:55:26.904632681+05:30","level":"INFO","msg":"stream: closing","id":"aw1vwime"}
+{"time":"2024-11-10T19:55:26.904667267+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T19:55:26.905169615+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T19:55:26.905393677+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"aw1vwime"}}
+{"time":"2024-11-10T19:55:26.905420893+05:30","level":"INFO","msg":"sender: closed","stream_id":"aw1vwime"}
+{"time":"2024-11-10T19:55:26.905417252+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"aw1vwime"}}
+{"time":"2024-11-10T19:55:26.905500043+05:30","level":"INFO","msg":"stream: closed","id":"aw1vwime"}

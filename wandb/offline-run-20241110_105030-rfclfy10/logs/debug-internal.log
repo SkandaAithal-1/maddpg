@@ -1,0 +1,15 @@
+{"time":"2024-11-10T10:50:30.464935315+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T10:50:30.464951215+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_105030-rfclfy10/logs/debug-core.log"}
+{"time":"2024-11-10T10:50:30.568403206+05:30","level":"INFO","msg":"created new stream","id":"rfclfy10"}
+{"time":"2024-11-10T10:50:30.568948954+05:30","level":"INFO","msg":"stream: started","id":"rfclfy10"}
+{"time":"2024-11-10T10:50:30.569003606+05:30","level":"INFO","msg":"sender: started","stream_id":"rfclfy10"}
+{"time":"2024-11-10T10:50:30.5690016+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"rfclfy10"}}
+{"time":"2024-11-10T10:50:30.56899255+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rfclfy10"}}
+{"time":"2024-11-10T10:50:30.582695294+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T10:50:30.722110743+05:30","level":"INFO","msg":"stream: closing","id":"rfclfy10"}
+{"time":"2024-11-10T10:50:30.722163024+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T10:50:30.723085829+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T10:50:30.723463041+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"rfclfy10"}}
+{"time":"2024-11-10T10:50:30.723493403+05:30","level":"INFO","msg":"sender: closed","stream_id":"rfclfy10"}
+{"time":"2024-11-10T10:50:30.723491632+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rfclfy10"}}
+{"time":"2024-11-10T10:50:30.723592423+05:30","level":"INFO","msg":"stream: closed","id":"rfclfy10"}

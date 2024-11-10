@@ -1,0 +1,15 @@
+{"time":"2024-11-10T10:53:44.406452849+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T10:53:44.406476233+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_105344-y55ujyo8/logs/debug-core.log"}
+{"time":"2024-11-10T10:53:44.510945082+05:30","level":"INFO","msg":"created new stream","id":"y55ujyo8"}
+{"time":"2024-11-10T10:53:44.511051035+05:30","level":"INFO","msg":"stream: started","id":"y55ujyo8"}
+{"time":"2024-11-10T10:53:44.51113871+05:30","level":"INFO","msg":"sender: started","stream_id":"y55ujyo8"}
+{"time":"2024-11-10T10:53:44.511095325+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"y55ujyo8"}}
+{"time":"2024-11-10T10:53:44.511135435+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"y55ujyo8"}}
+{"time":"2024-11-10T10:53:44.525206083+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T10:53:45.016399656+05:30","level":"INFO","msg":"stream: closing","id":"y55ujyo8"}
+{"time":"2024-11-10T10:53:45.01641758+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T10:53:45.016718197+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T10:53:45.016825218+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"y55ujyo8"}}
+{"time":"2024-11-10T10:53:45.016839155+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"y55ujyo8"}}
+{"time":"2024-11-10T10:53:45.016878108+05:30","level":"INFO","msg":"sender: closed","stream_id":"y55ujyo8"}
+{"time":"2024-11-10T10:53:45.016884467+05:30","level":"INFO","msg":"stream: closed","id":"y55ujyo8"}

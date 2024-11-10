@@ -1,0 +1,16 @@
+{"time":"2024-11-10T21:42:43.011462798+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T21:42:43.011479168+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/run-20241110_214243-vwmbt699/logs/debug-core.log"}
+{"time":"2024-11-10T21:42:43.114612421+05:30","level":"INFO","msg":"created new stream","id":"vwmbt699"}
+{"time":"2024-11-10T21:42:43.114634771+05:30","level":"INFO","msg":"stream: started","id":"vwmbt699"}
+{"time":"2024-11-10T21:42:43.114675447+05:30","level":"INFO","msg":"sender: started","stream_id":"vwmbt699"}
+{"time":"2024-11-10T21:42:43.114669073+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"vwmbt699"}}
+{"time":"2024-11-10T21:42:43.114703032+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"vwmbt699"}}
+{"time":"2024-11-10T21:42:43.640796445+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T21:44:40.438995644+05:30","level":"INFO","msg":"stream: closing","id":"vwmbt699"}
+{"time":"2024-11-10T21:44:40.439024042+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T21:44:40.439451899+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T21:44:45.895112379+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-10T21:44:46.366453625+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"vwmbt699"}}
+{"time":"2024-11-10T21:44:46.366541005+05:30","level":"INFO","msg":"sender: closed","stream_id":"vwmbt699"}
+{"time":"2024-11-10T21:44:46.366542004+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"vwmbt699"}}
+{"time":"2024-11-10T21:44:46.366699644+05:30","level":"INFO","msg":"stream: closed","id":"vwmbt699"}

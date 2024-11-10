@@ -1,0 +1,55 @@
+100%|██████████████████████████████████████████████████| 10/10 [00:00<00:00, 62.56it/s, Warming up...]                                                                                 
+  0%|                                                  | 700/2000000 [01:53<89:51:36,  6.18it/s, eval_return=-43.84]                                                                   
+[[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]]
+[[[12, 12]], [[2, 3]], [[3, 3]], [[1, 4]], [[10, 1]]]
+Goal : [5, 14]
+Goal : [18, 9]
+Goal : [10, 2]
+Goal : [2, 14]
+Goal : [14, 18]
+Path length : 101
+Path_point : [12, 12]
+Path length : 101
+Path_point : [2, 3]
+Path length : 101
+Path_point : [3, 3]
+Path length : 101
+Path_point : [1, 4]
+Path length : 101
+Path_point : [10, 1]
+Traceback (most recent call last):
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 391, in <module>
+    _ = train(config, wandb_run)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 206, in train
+    maddpg.update(sample)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/maddpg.py", line 95, in update
+    agent.update_actor(
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/agent.py", line 77, in update_actor
+    gs_outputs = self.gradient_estimator(policy_outputs)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/gradient_estimators.py", line 101, in __call__
+    DD = OneHotCategorical(logits=logits).sample()
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/one_hot_categorical.py", line 49, in __init__
+    super().__init__(batch_shape, event_shape, validate_args=validate_args)
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/distribution.py", line 69, in __init__
+    valid = constraint.check(value)
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/constraints.py", line 464, in check
+    return torch.all(value >= 0, dim=-1) & ((value.sum(-1) - 1).abs() < 1e-6)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 391, in <module>
+    _ = train(config, wandb_run)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 206, in train
+    maddpg.update(sample)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/maddpg.py", line 95, in update
+    agent.update_actor(
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/agent.py", line 77, in update_actor
+    gs_outputs = self.gradient_estimator(policy_outputs)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/gradient_estimators.py", line 101, in __call__
+    DD = OneHotCategorical(logits=logits).sample()
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/one_hot_categorical.py", line 49, in __init__
+    super().__init__(batch_shape, event_shape, validate_args=validate_args)
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/distribution.py", line 69, in __init__
+    valid = constraint.check(value)
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/constraints.py", line 464, in check
+    return torch.all(value >= 0, dim=-1) & ((value.sum(-1) - 1).abs() < 1e-6)
+KeyboardInterrupt

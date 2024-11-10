@@ -1,0 +1,15 @@
+{"time":"2024-11-10T15:23:04.257362091+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-10T15:23:04.257396002+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/revisiting-maddpg/wandb/offline-run-20241110_152304-tynsz48x/logs/debug-core.log"}
+{"time":"2024-11-10T15:23:04.360552361+05:30","level":"INFO","msg":"created new stream","id":"tynsz48x"}
+{"time":"2024-11-10T15:23:04.360596283+05:30","level":"INFO","msg":"stream: started","id":"tynsz48x"}
+{"time":"2024-11-10T15:23:04.361102194+05:30","level":"INFO","msg":"sender: started","stream_id":"tynsz48x"}
+{"time":"2024-11-10T15:23:04.361029586+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"tynsz48x"}}
+{"time":"2024-11-10T15:23:04.360648604+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tynsz48x"}}
+{"time":"2024-11-10T15:23:04.376063452+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-10T15:23:04.591851116+05:30","level":"INFO","msg":"stream: closing","id":"tynsz48x"}
+{"time":"2024-11-10T15:23:04.591878024+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-10T15:23:04.592361137+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-10T15:23:04.592597979+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"tynsz48x"}}
+{"time":"2024-11-10T15:23:04.592617847+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"tynsz48x"}}
+{"time":"2024-11-10T15:23:04.592625553+05:30","level":"INFO","msg":"sender: closed","stream_id":"tynsz48x"}
+{"time":"2024-11-10T15:23:04.592665788+05:30","level":"INFO","msg":"stream: closed","id":"tynsz48x"}

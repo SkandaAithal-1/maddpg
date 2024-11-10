@@ -1,0 +1,42 @@
+100%|██████████████████████████████████████████████████| 10/10 [00:00<00:00, 75.84it/s, Warming up...]                                                                                 
+  0%|                                                  | 0/200000 [00:03<?, ?it/s]                                                                                                     
+Traceback (most recent call last):
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 391, in <module>
+    _ = train(config, wandb_run)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 229, in train
+    timestep_returns.append(play_episode(
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 42, in play_episode
+    acts = action_fn(obs)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/maddpg.py", line 50, in acts
+    actions = [self.agents[ii].act_behaviour(obs[ii]) for ii in range(self.n_agents)]
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/maddpg.py", line 50, in <listcomp>
+    actions = [self.agents[ii].act_behaviour(obs[ii]) for ii in range(self.n_agents)]
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/agent.py", line 51, in act_behaviour
+    gs_output = self.gradient_estimator(policy_output, need_gradients=False)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/gradient_estimators.py", line 101, in __call__
+    DD = OneHotCategorical(logits=logits).sample()
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/one_hot_categorical.py", line 46, in __init__
+    self._categorical = Categorical(probs, logits)
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/categorical.py", line 66, in __init__
+    self.logits = logits - logits.logsumexp(dim=-1, keepdim=True)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 391, in <module>
+    _ = train(config, wandb_run)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 229, in train
+    timestep_returns.append(play_episode(
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/main.py", line 42, in play_episode
+    acts = action_fn(obs)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/maddpg.py", line 50, in acts
+    actions = [self.agents[ii].act_behaviour(obs[ii]) for ii in range(self.n_agents)]
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/maddpg.py", line 50, in <listcomp>
+    actions = [self.agents[ii].act_behaviour(obs[ii]) for ii in range(self.n_agents)]
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/agent.py", line 51, in act_behaviour
+    gs_output = self.gradient_estimator(policy_output, need_gradients=False)
+  File "/home/skanda/InterIIT/MADDPG/revisiting-maddpg/gradient_estimators.py", line 101, in __call__
+    DD = OneHotCategorical(logits=logits).sample()
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/one_hot_categorical.py", line 46, in __init__
+    self._categorical = Categorical(probs, logits)
+  File "/home/skanda/.local/lib/python3.10/site-packages/torch/distributions/categorical.py", line 66, in __init__
+    self.logits = logits - logits.logsumexp(dim=-1, keepdim=True)
+KeyboardInterrupt
