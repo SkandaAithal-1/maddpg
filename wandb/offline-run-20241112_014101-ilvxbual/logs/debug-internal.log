@@ -1,0 +1,15 @@
+{"time":"2024-11-12T01:41:01.679174252+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T01:41:01.679201115+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_014101-ilvxbual/logs/debug-core.log"}
+{"time":"2024-11-12T01:41:01.783074348+05:30","level":"INFO","msg":"created new stream","id":"ilvxbual"}
+{"time":"2024-11-12T01:41:01.78311952+05:30","level":"INFO","msg":"stream: started","id":"ilvxbual"}
+{"time":"2024-11-12T01:41:01.783224893+05:30","level":"INFO","msg":"sender: started","stream_id":"ilvxbual"}
+{"time":"2024-11-12T01:41:01.783178864+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ilvxbual"}}
+{"time":"2024-11-12T01:41:01.78329696+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"ilvxbual"}}
+{"time":"2024-11-12T01:41:01.800128058+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T01:41:03.131066991+05:30","level":"INFO","msg":"stream: closing","id":"ilvxbual"}
+{"time":"2024-11-12T01:41:03.131110779+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T01:41:03.131714246+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T01:41:03.131899303+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"ilvxbual"}}
+{"time":"2024-11-12T01:41:03.13191816+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ilvxbual"}}
+{"time":"2024-11-12T01:41:03.131923054+05:30","level":"INFO","msg":"sender: closed","stream_id":"ilvxbual"}
+{"time":"2024-11-12T01:41:03.131994008+05:30","level":"INFO","msg":"stream: closed","id":"ilvxbual"}

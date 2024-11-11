@@ -1,0 +1,15 @@
+{"time":"2024-11-12T01:41:27.759506527+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T01:41:27.75952871+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_014127-r8rdnewc/logs/debug-core.log"}
+{"time":"2024-11-12T01:41:27.863271516+05:30","level":"INFO","msg":"created new stream","id":"r8rdnewc"}
+{"time":"2024-11-12T01:41:27.863315723+05:30","level":"INFO","msg":"stream: started","id":"r8rdnewc"}
+{"time":"2024-11-12T01:41:27.863486854+05:30","level":"INFO","msg":"sender: started","stream_id":"r8rdnewc"}
+{"time":"2024-11-12T01:41:27.863351552+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"r8rdnewc"}}
+{"time":"2024-11-12T01:41:27.863435595+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"r8rdnewc"}}
+{"time":"2024-11-12T01:41:27.877192643+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T01:41:29.253556417+05:30","level":"INFO","msg":"stream: closing","id":"r8rdnewc"}
+{"time":"2024-11-12T01:41:29.253610529+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T01:41:29.255537195+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T01:41:29.255806378+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"r8rdnewc"}}
+{"time":"2024-11-12T01:41:29.255831384+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"r8rdnewc"}}
+{"time":"2024-11-12T01:41:29.255841574+05:30","level":"INFO","msg":"sender: closed","stream_id":"r8rdnewc"}
+{"time":"2024-11-12T01:41:29.256022368+05:30","level":"INFO","msg":"stream: closed","id":"r8rdnewc"}

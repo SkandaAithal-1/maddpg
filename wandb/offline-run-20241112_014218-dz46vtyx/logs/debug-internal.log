@@ -1,0 +1,15 @@
+{"time":"2024-11-12T01:42:18.30705555+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T01:42:18.307085029+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_014218-dz46vtyx/logs/debug-core.log"}
+{"time":"2024-11-12T01:42:18.411395277+05:30","level":"INFO","msg":"created new stream","id":"dz46vtyx"}
+{"time":"2024-11-12T01:42:18.411454371+05:30","level":"INFO","msg":"stream: started","id":"dz46vtyx"}
+{"time":"2024-11-12T01:42:18.411543225+05:30","level":"INFO","msg":"sender: started","stream_id":"dz46vtyx"}
+{"time":"2024-11-12T01:42:18.411537541+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"dz46vtyx"}}
+{"time":"2024-11-12T01:42:18.411520899+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"dz46vtyx"}}
+{"time":"2024-11-12T01:42:18.427400249+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T01:42:19.785690398+05:30","level":"INFO","msg":"stream: closing","id":"dz46vtyx"}
+{"time":"2024-11-12T01:42:19.785763489+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T01:42:19.78652534+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T01:42:19.786797197+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"dz46vtyx"}}
+{"time":"2024-11-12T01:42:19.78682063+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"dz46vtyx"}}
+{"time":"2024-11-12T01:42:19.786833196+05:30","level":"INFO","msg":"sender: closed","stream_id":"dz46vtyx"}
+{"time":"2024-11-12T01:42:19.786913451+05:30","level":"INFO","msg":"stream: closed","id":"dz46vtyx"}

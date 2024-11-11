@@ -65,9 +65,9 @@ class MADDPG:
         # sample['obs'] : agent batch obs
         for ii in range(self.n_agents):
             sample['obs'][ii] = self.embedder(torch.Tensor(sample['obs'][ii]))
-            sample['obs'][ii] = torch.cat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii]), dim=1)
+            # sample['obs'][ii] = torch.cat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii]), dim=1)
             sample['nobs'][ii] = self.embedder(torch.Tensor(sample['nobs'][ii]))
-            sample['nobs'][ii] = torch.cat((sample['nobs'][ii], sample['goals'][ii], sample['states'][ii]), dim=1)
+            # sample['nobs'][ii] = torch.cat((sample['nobs'][ii], sample['goals'][ii], sample['states'][ii]), dim=1)
 
         batched_obs = torch.concat(sample['obs'], axis=1).detach()
         batched_nobs = torch.concat(sample['nobs'], axis=1).detach()
@@ -76,7 +76,7 @@ class MADDPG:
         # TODO: This is all a bit cumbersome--could be cleaner?
 
         target_actions = [
-            self.agents[ii].act_target(sample['nobs'][ii])
+            self.agents[ii].act_target(torch.concat((sample['nobs'][ii], sample['ngoals'][ii], sample['nstates'][ii]), axis=1))
             for ii in range(self.n_agents)
         ]
 
@@ -99,13 +99,21 @@ class MADDPG:
         # ********
 
         info = {}
+        batched_goals = torch.concat(sample['goals'], axis=1)
+        batched_ngoals = torch.concat(sample['ngoals'], axis=1)
+        batched_states = torch.concat(sample['states'], axis=1)
+        batched_nstates = torch.concat(sample['nstates'], axis=1)
 
         for ii, agent in enumerate(self.agents):
+
             self.embed_optim.zero_grad()
 
+            batched_obs = torch.cat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii], batched_goals, batched_states), axis=1)
+            batched_nobs = torch.cat((sample['nobs'][ii], sample['ngoals'][ii], sample['nstates'][ii], batched_ngoals, batched_nstates), axis=1)
+
             critic_loss = agent.update_critic(
-                all_obs=batched_obs,
-                all_nobs=batched_nobs,
+                all_obs=batched_obs.detach(),
+                all_nobs=batched_nobs.detach(),
                 target_actions_per_agent=target_actions_one_hot,
                 sampled_actions_per_agent=sampled_actions_one_hot,
                 rewards=rewards[ii].unsqueeze(dim=1),
@@ -115,7 +123,7 @@ class MADDPG:
 
             actor_loss = agent.update_actor(
                 all_obs=batched_obs,
-                agent_obs=sample['obs'][ii],
+                agent_obs=torch.concat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii]), axis=1),
                 sampled_actions=sampled_actions_one_hot,
             )
 

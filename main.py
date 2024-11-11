@@ -119,6 +119,8 @@ def play_episode_eval(
                 rwds=rwds,
                 goals = env.goals,
                 states = env.currentPositions,
+                ngoals=ngoals,
+                nstates=nstates,
                 nobs=nobs,
                 dones=dones,
             )

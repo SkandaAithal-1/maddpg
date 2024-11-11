@@ -136,8 +136,8 @@ class GridWorld:
         self.currentPositions = self.start.copy()
         self.goals = self.Goals.copy()
 
-        if (flag):
-            print(self.currentPositions)
+        # if (flag):
+        #     print(self.currentPositions)
         
         # print(f"Starting positions : {self.currentPositions}\n"+
         #       f"Goals : {self.goals}\n")

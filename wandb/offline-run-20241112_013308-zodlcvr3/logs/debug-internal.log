@@ -1,0 +1,15 @@
+{"time":"2024-11-12T01:33:08.846189236+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T01:33:08.846212618+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_013308-zodlcvr3/logs/debug-core.log"}
+{"time":"2024-11-12T01:33:08.94968987+05:30","level":"INFO","msg":"created new stream","id":"zodlcvr3"}
+{"time":"2024-11-12T01:33:08.949727369+05:30","level":"INFO","msg":"stream: started","id":"zodlcvr3"}
+{"time":"2024-11-12T01:33:08.949881224+05:30","level":"INFO","msg":"sender: started","stream_id":"zodlcvr3"}
+{"time":"2024-11-12T01:33:08.949775571+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"zodlcvr3"}}
+{"time":"2024-11-12T01:33:08.949903443+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"zodlcvr3"}}
+{"time":"2024-11-12T01:33:08.965199854+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T01:33:10.25300547+05:30","level":"INFO","msg":"stream: closing","id":"zodlcvr3"}
+{"time":"2024-11-12T01:33:10.253041707+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T01:33:10.253513229+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T01:33:10.253734376+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"zodlcvr3"}}
+{"time":"2024-11-12T01:33:10.253758379+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"zodlcvr3"}}
+{"time":"2024-11-12T01:33:10.25381358+05:30","level":"INFO","msg":"sender: closed","stream_id":"zodlcvr3"}
+{"time":"2024-11-12T01:33:10.253834981+05:30","level":"INFO","msg":"stream: closed","id":"zodlcvr3"}
