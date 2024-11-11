@@ -41,7 +41,7 @@ def play_episode(
             sleep(0.03)
 
         acts = action_fn([obs, env.goals, env.currentPositions])
-        nobs, rwds, dones, _ = env.step(np.array(acts))
+        nobs, rwds, dones, _ = env.step(acts)
         # print(f"Step: {episode_steps}")
         total_collision += env.totalCollision
 

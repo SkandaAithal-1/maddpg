@@ -1,0 +1,15 @@
+{"time":"2024-11-11T22:04:38.81037563+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T22:04:38.810389668+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241111_220438-cvv695i8/logs/debug-core.log"}
+{"time":"2024-11-11T22:04:38.913313291+05:30","level":"INFO","msg":"created new stream","id":"cvv695i8"}
+{"time":"2024-11-11T22:04:38.913341946+05:30","level":"INFO","msg":"stream: started","id":"cvv695i8"}
+{"time":"2024-11-11T22:04:38.913366091+05:30","level":"INFO","msg":"sender: started","stream_id":"cvv695i8"}
+{"time":"2024-11-11T22:04:38.913366821+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"cvv695i8"}}
+{"time":"2024-11-11T22:04:38.913357052+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"cvv695i8"}}
+{"time":"2024-11-11T22:04:38.920322666+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T22:05:05.984509171+05:30","level":"INFO","msg":"stream: closing","id":"cvv695i8"}
+{"time":"2024-11-11T22:05:05.984545097+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T22:05:05.984950132+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T22:05:05.985215319+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"cvv695i8"}}
+{"time":"2024-11-11T22:05:05.985232727+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"cvv695i8"}}
+{"time":"2024-11-11T22:05:05.985235849+05:30","level":"INFO","msg":"sender: closed","stream_id":"cvv695i8"}
+{"time":"2024-11-11T22:05:05.985271892+05:30","level":"INFO","msg":"stream: closed","id":"cvv695i8"}

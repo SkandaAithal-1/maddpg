@@ -58,7 +58,7 @@ class MADDPG:
             tempObs = torch.cat((torch.Tensor(tempObs), torch.Tensor(goals[ii]).unsqueeze(0), torch.Tensor(states[ii]).unsqueeze(0)), dim=1)
             new_obs.append(tempObs)
 
-        actions = [self.agents[ii].act_behaviour(torch.Tensor(new_obs[ii]).unsqueeze(0)) for ii in range(self.n_agents)]
+        actions = [self.agents[ii].act_behaviour(torch.Tensor(new_obs[ii]).squeeze()) for ii in range(self.n_agents)]
         return actions
 
     def update(self, sample):

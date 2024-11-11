@@ -1,0 +1,22 @@
+100%|██████████████████████████████████████████████████| 10/10 [00:00<00:00, 52.03it/s, Warming up...]                                                                                 
+  0%|                                                  | 0/2000000 [00:17<?, ?it/s]                                                                                                    
+Traceback (most recent call last):
+  File "/home/skanda/InterIIT/MADDPG/maddpg/main.py", line 414, in <module>
+    _ = train(config, wandb_run)
+  File "/home/skanda/InterIIT/MADDPG/maddpg/main.py", line 248, in train
+    tr, _, col = play_episode(
+  File "/home/skanda/InterIIT/MADDPG/maddpg/main.py", line 44, in play_episode
+    nobs, rwds, dones, _ = env.step(np.array(acts))
+  File "/home/skanda/InterIIT/MADDPG/maddpg/grid_world.py", line 178, in step
+    for a in range(self.n_agents):
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/skanda/InterIIT/MADDPG/maddpg/main.py", line 414, in <module>
+    _ = train(config, wandb_run)
+  File "/home/skanda/InterIIT/MADDPG/maddpg/main.py", line 248, in train
+    tr, _, col = play_episode(
+  File "/home/skanda/InterIIT/MADDPG/maddpg/main.py", line 44, in play_episode
+    nobs, rwds, dones, _ = env.step(np.array(acts))
+  File "/home/skanda/InterIIT/MADDPG/maddpg/grid_world.py", line 178, in step
+    for a in range(self.n_agents):
+KeyboardInterrupt

@@ -1,0 +1,16 @@
+{"time":"2024-11-11T22:11:24.596628132+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T22:11:24.596637795+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/run-20241111_221124-plubozmk/logs/debug-core.log"}
+{"time":"2024-11-11T22:11:24.699924093+05:30","level":"INFO","msg":"created new stream","id":"plubozmk"}
+{"time":"2024-11-11T22:11:24.699974725+05:30","level":"INFO","msg":"stream: started","id":"plubozmk"}
+{"time":"2024-11-11T22:11:24.700022351+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"plubozmk"}}
+{"time":"2024-11-11T22:11:24.700127273+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"plubozmk"}}
+{"time":"2024-11-11T22:11:24.700223965+05:30","level":"INFO","msg":"sender: started","stream_id":"plubozmk"}
+{"time":"2024-11-11T22:11:25.342639674+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T22:11:43.803848733+05:30","level":"INFO","msg":"stream: closing","id":"plubozmk"}
+{"time":"2024-11-11T22:11:43.803873231+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T22:11:43.804234748+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T22:11:49.70707761+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-11T22:11:50.374481358+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"plubozmk"}}
+{"time":"2024-11-11T22:11:50.374543836+05:30","level":"INFO","msg":"sender: closed","stream_id":"plubozmk"}
+{"time":"2024-11-11T22:11:50.374539995+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"plubozmk"}}
+{"time":"2024-11-11T22:11:50.374673324+05:30","level":"INFO","msg":"stream: closed","id":"plubozmk"}
