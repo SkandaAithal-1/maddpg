@@ -1,5 +1,5 @@
 warmup_epi=10
-replay_buffer_size=2000000
+replay_buffer_size=200000
 total_steps=2000000
 max_episode_length=100
 train_repeats=5

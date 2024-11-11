@@ -21,11 +21,15 @@ class ReplayBuffer:
         self.memory_nobs = []
         self.memory_goals = []
         self.memory_states = []
+        self.memory_ngoals = []
+        self.memory_nstates = []
         for ii in range(self.n_agents):
             self.memory_obs.append( Tensor(self.capacity, *(obs_dims[ii])) )
             self.memory_nobs.append( Tensor(self.capacity, *(obs_dims[ii])) )
             self.memory_goals.append( Tensor(self.capacity, goal_dim[ii]) )
             self.memory_states.append( Tensor(self.capacity, state_dim[ii]) )
+            self.memory_ngoals.append( Tensor(self.capacity, goal_dim[ii]))
+            self.memory_nstates.append( Tensor(self.capacity, state_dim[ii]))
         self.memory_acts = Tensor(self.n_agents, self.capacity)
         self.memory_rwds = Tensor(self.n_agents, self.capacity)
         self.memory_dones = Tensor(self.n_agents, self.capacity)
@@ -59,7 +63,9 @@ class ReplayBuffer:
             "rwds": self.memory_rwds[:,idxs],
             "nobs": [self.memory_nobs[ii][idxs] for ii in range(self.n_agents)],
             "goals": [self.memory_goals[ii][idxs] for ii in range(self.n_agents)],
+            "ngoals": [self.memory_ngoals[ii][idxs] for ii in range(self.n_agents)],
             "states": [self.memory_states[ii][idxs] for ii in range(self.n_agents)],
+            "nstates": [self.memory_nstates[ii][idxs] for ii in range(self.n_agents)],
             "dones": self.memory_dones[:,idxs],
         }
     

@@ -30,6 +30,8 @@ def play_episode(
 ):
     obs = env.reset()
     dones = [False] * env.n_agents
+    states = env.currentPositions
+    goals = env.goals
 
     episode_steps = 0
     episode_return = 0
@@ -40,8 +42,10 @@ def play_episode(
             env.render()
             sleep(0.03)
 
-        acts = action_fn([obs, env.goals, env.currentPositions])
+        acts = action_fn([obs, goals, states])
         nobs, rwds, dones, _ = env.step(acts)
+        ngoals = env.goals
+        nstates = env.states
         # print(f"Step: {episode_steps}")
         total_collision += env.totalCollision
 
@@ -55,13 +59,17 @@ def play_episode(
                 obs=obs,
                 acts=acts,
                 rwds=rwds,
-                goals=env.goals,
-                states=env.currentPositions,
+                goals=goals,
+                states=states,
                 nobs=nobs,
+                ngoals=ngoals,
+                nstates=nstates,
                 dones=dones,
             )
         episode_return += rwds[0] if reward_per_agent else sum(rwds)
         obs = nobs
+        goals = ngoals
+        states = nstates
 
     return episode_return, episode_steps, total_collision
 
@@ -75,6 +83,9 @@ def play_episode_eval(
 ):
     obs = env.reset(flag=True)
     dones = [False] * env.n_agents
+    states = env.currentPositions
+    goals = env.goals
+
 
     # paths = [[o] for o in env.currentPositions]
     # print(paths)
@@ -88,8 +99,10 @@ def play_episode_eval(
             env.render()
             sleep(0.03)
 
-        acts = action_fn([obs, env.goals, env.currentPositions])
+        acts = action_fn([obs, goals, states])
         nobs, rwds, dones, _ = env.step(np.array(acts))
+        ngoals = env.goals
+        nstates = env.states
         # print(f"Step: {episode_steps}")
         # for a in range(env.n_agents):
         #     paths[a].append(env.currentPositions[a])
@@ -111,6 +124,8 @@ def play_episode_eval(
             )
         episode_return += rwds[0] if reward_per_agent else sum(rwds)
         obs = nobs
+        goals = ngoals
+        states = nstates
     
     # tempMap = -1*np.array(env.env)*255 + 255
     # plt.figure(figsize=(8, 8))
@@ -309,11 +324,11 @@ if __name__ == "__main__":
     
     # Core hyperparams
     parser.add_argument("--batch_size", default=512, type=int)
-    parser.add_argument("--hidden_dim_width", default=64, type=int)
+    parser.add_argument("--hidden_dim_width", default=16, type=int)
     parser.add_argument("--critic_lr", default=3e-4, type=float)
     parser.add_argument("--actor_lr", default=3e-4, type=float)
     parser.add_argument("--gradient_clip", default=1.0, type=float)
-    parser.add_argument("--gamma", default=0.95, type=float)
+    parser.add_argument("--gamma", default=0.99, type=float)
     parser.add_argument("--soft_update_size", default=0.01, type=float)
     parser.add_argument("--policy_regulariser", default=0.001, type=float)
     parser.add_argument("--reward_per_agent", action="store_true")
