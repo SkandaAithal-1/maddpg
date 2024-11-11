@@ -76,11 +76,12 @@ def play_episode_eval(
     obs = env.reset(flag=True)
     dones = [False] * env.n_agents
 
-    paths = [[o] for o in env.currentPositions]
-    print(paths)
+    # paths = [[o] for o in env.currentPositions]
+    # print(paths)
 
     episode_steps = 0
     episode_return = 0
+    total_collision = 0
 
     while not all(dones):
         if (render):
@@ -90,8 +91,9 @@ def play_episode_eval(
         acts = action_fn([obs, env.goals, env.currentPositions])
         nobs, rwds, dones, _ = env.step(np.array(acts))
         # print(f"Step: {episode_steps}")
-        for a in range(env.n_agents):
-            paths[a].append(env.currentPositions[a])
+        # for a in range(env.n_agents):
+        #     paths[a].append(env.currentPositions[a])
+        total_collision += env.totalCollision
 
         episode_steps += 1
         if (episode_steps >= max_episode_length): # Some envs don't have done flags,
@@ -130,7 +132,7 @@ def play_episode_eval(
     # plt.axis("off")
     # plt.show()
 
-    return episode_return, episode_steps
+    return episode_return, episode_steps, total_collision
 
 
 

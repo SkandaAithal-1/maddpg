@@ -11,5 +11,5 @@ gst_gap=0.7
 user_name="aithalskanda66"
 project_name="InterIIT"
 
-python main.py --env ${env} --warmup_episodes ${warmup_epi} --replay_buffer_size ${replay_buffer_size} --total_steps ${total_steps} --eval_freq ${eval_freq} --max_episode_length ${max_episode_length} --train_repeats ${train_repeats} --batch_size ${batch_size} --gradient_estimator ${gradient_estimator} --gst_gap ${gst_gap} --user_name ${user_name} --wandb_project_name ${project_name} --log_grad_variance
+python main.py --env ${env} --warmup_episodes ${warmup_epi} --replay_buffer_size ${replay_buffer_size} --total_steps ${total_steps} --eval_freq ${eval_freq} --max_episode_length ${max_episode_length} --train_repeats ${train_repeats} --batch_size ${batch_size} --gradient_estimator ${gradient_estimator} --gst_gap ${gst_gap} --user_name ${user_name} --wandb_project_name ${project_name} --log_grad_variance 
 
