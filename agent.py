@@ -71,6 +71,8 @@ class Agent:
         torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.gradient_clip)
         self.optim_critic.step()
 
+        return loss
+
     def update_actor(self, all_obs, agent_obs, sampled_actions):
 
         policy_outputs = self.policy(agent_obs)
@@ -86,6 +88,8 @@ class Agent:
         loss.backward()
         torch.nn.utils.clip_grad_norm_(self.policy.parameters(), self.gradient_clip)
         self.optim_actor.step()
+
+        return loss
 
     def soft_update(self):
         self.target_critic.soft_update(self.critic, self.soft_update_size)

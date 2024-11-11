@@ -2,6 +2,7 @@ import numpy as np
 import torch
 from agent import Agent
 from typing import List, Optional
+from networks import CNNHead 
 import torch.nn.functional as F
 from utils import RunningMeanStd
 
@@ -43,17 +44,33 @@ class MADDPG:
             for ii in range(self.n_agents)
         ] if pretrained_agents is None else pretrained_agents
 
+        self.embedder = CNNHead()
+        self.embed_optim = torch.optim.Adam(self.embedder.parameters(), lr=3e-4, eps=0.001)
+
         self.return_std = RunningMeanStd(shape=(self.n_agents,)) if standardise_rewards else None
         self.gradient_estimator = gradient_estimator # Keep reference to GE object
 
     def acts(self, obs: List):
-        actions = [self.agents[ii].act_behaviour(obs[ii]) for ii in range(self.n_agents)]
+        obs, goals, states = obs
+        new_obs = []
+        for ii in range(self.n_agents):
+            tempObs = self.embedder(torch.Tensor(obs[ii]).unsqueeze(0))
+            tempObs = torch.cat((torch.Tensor(tempObs), torch.Tensor(goals[ii]).unsqueeze(0), torch.Tensor(states[ii]).unsqueeze(0)), dim=1)
+            new_obs.append(tempObs)
+
+        actions = [self.agents[ii].act_behaviour(torch.Tensor(new_obs[ii]).unsqueeze(0)) for ii in range(self.n_agents)]
         return actions
 
     def update(self, sample):
         # sample['obs'] : agent batch obs
-        batched_obs = torch.concat(sample['obs'], axis=1)
-        batched_nobs = torch.concat(sample['nobs'], axis=1)
+        for ii in range(self.n_agents):
+            sample['obs'][ii] = self.embedder(torch.Tensor(sample['obs'][ii]))
+            sample['obs'][ii] = torch.cat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii]), dim=1)
+            sample['nobs'][ii] = self.embedder(torch.Tensor(sample['nobs'][ii]))
+            sample['nobs'][ii] = torch.cat((sample['nobs'][ii], sample['goals'][ii], sample['states'][ii]), dim=1)
+
+        batched_obs = torch.concat(sample['obs'], axis=1).detach()
+        batched_nobs = torch.concat(sample['nobs'], axis=1).detach()
 
         # ********
         # TODO: This is all a bit cumbersome--could be cleaner?
@@ -81,8 +98,12 @@ class MADDPG:
             rewards = ((rewards.T - self.return_std.mean) / torch.sqrt(self.return_std.var)).T
         # ********
 
+        info = {}
+
         for ii, agent in enumerate(self.agents):
-            agent.update_critic(
+            self.embed_optim.zero_grad()
+
+            critic_loss = agent.update_critic(
                 all_obs=batched_obs,
                 all_nobs=batched_nobs,
                 target_actions_per_agent=target_actions_one_hot,
@@ -92,15 +113,20 @@ class MADDPG:
                 gamma=self.gamma,
             )
 
-            agent.update_actor(
+            actor_loss = agent.update_actor(
                 all_obs=batched_obs,
                 agent_obs=sample['obs'][ii],
                 sampled_actions=sampled_actions_one_hot,
             )
+
+            info[f"Actor_loss_agent_{ii}"] = actor_loss
+            info[f"Critic_loss_agent_{ii}"] = critic_loss
+
+        self.embed_optim.step()
 
         for agent in self.agents:
             agent.soft_update()
 
         self.gradient_estimator.update_state() # Update GE state, if necessary
 
-        return None
+        return info 

@@ -1,0 +1,15 @@
+{"time":"2024-11-11T20:44:14.32187912+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T20:44:14.321897731+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241111_204414-3kvrdieo/logs/debug-core.log"}
+{"time":"2024-11-11T20:44:14.426099902+05:30","level":"INFO","msg":"created new stream","id":"3kvrdieo"}
+{"time":"2024-11-11T20:44:14.426129147+05:30","level":"INFO","msg":"stream: started","id":"3kvrdieo"}
+{"time":"2024-11-11T20:44:14.426157973+05:30","level":"INFO","msg":"sender: started","stream_id":"3kvrdieo"}
+{"time":"2024-11-11T20:44:14.426159186+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"3kvrdieo"}}
+{"time":"2024-11-11T20:44:14.426145992+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"3kvrdieo"}}
+{"time":"2024-11-11T20:44:14.433288745+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T20:44:19.260571356+05:30","level":"INFO","msg":"stream: closing","id":"3kvrdieo"}
+{"time":"2024-11-11T20:44:19.260600751+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T20:44:19.261164165+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T20:44:19.261341388+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"3kvrdieo"}}
+{"time":"2024-11-11T20:44:19.261362151+05:30","level":"INFO","msg":"sender: closed","stream_id":"3kvrdieo"}
+{"time":"2024-11-11T20:44:19.261357483+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"3kvrdieo"}}
+{"time":"2024-11-11T20:44:19.261425036+05:30","level":"INFO","msg":"stream: closed","id":"3kvrdieo"}

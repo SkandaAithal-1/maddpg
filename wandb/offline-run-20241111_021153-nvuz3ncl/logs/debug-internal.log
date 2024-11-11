@@ -1,0 +1,15 @@
+{"time":"2024-11-11T02:11:53.850136201+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T02:11:53.85015214+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241111_021153-nvuz3ncl/logs/debug-core.log"}
+{"time":"2024-11-11T02:11:53.953010934+05:30","level":"INFO","msg":"created new stream","id":"nvuz3ncl"}
+{"time":"2024-11-11T02:11:53.953053005+05:30","level":"INFO","msg":"stream: started","id":"nvuz3ncl"}
+{"time":"2024-11-11T02:11:53.953247072+05:30","level":"INFO","msg":"sender: started","stream_id":"nvuz3ncl"}
+{"time":"2024-11-11T02:11:53.953178911+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nvuz3ncl"}}
+{"time":"2024-11-11T02:11:53.953202135+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"nvuz3ncl"}}
+{"time":"2024-11-11T02:11:53.970540412+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T02:11:55.030204067+05:30","level":"INFO","msg":"stream: closing","id":"nvuz3ncl"}
+{"time":"2024-11-11T02:11:55.030233721+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T02:11:55.030565931+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T02:11:55.030667486+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"nvuz3ncl"}}
+{"time":"2024-11-11T02:11:55.030680164+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nvuz3ncl"}}
+{"time":"2024-11-11T02:11:55.030695588+05:30","level":"INFO","msg":"sender: closed","stream_id":"nvuz3ncl"}
+{"time":"2024-11-11T02:11:55.030725353+05:30","level":"INFO","msg":"stream: closed","id":"nvuz3ncl"}

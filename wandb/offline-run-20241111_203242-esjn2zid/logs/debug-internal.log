@@ -1,0 +1,15 @@
+{"time":"2024-11-11T20:32:42.027812653+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T20:32:42.027838431+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241111_203242-esjn2zid/logs/debug-core.log"}
+{"time":"2024-11-11T20:32:42.131982944+05:30","level":"INFO","msg":"created new stream","id":"esjn2zid"}
+{"time":"2024-11-11T20:32:42.1320516+05:30","level":"INFO","msg":"stream: started","id":"esjn2zid"}
+{"time":"2024-11-11T20:32:42.13214691+05:30","level":"INFO","msg":"sender: started","stream_id":"esjn2zid"}
+{"time":"2024-11-11T20:32:42.13218845+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"esjn2zid"}}
+{"time":"2024-11-11T20:32:42.132187922+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"esjn2zid"}}
+{"time":"2024-11-11T20:32:42.147825341+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T20:32:43.670091999+05:30","level":"INFO","msg":"stream: closing","id":"esjn2zid"}
+{"time":"2024-11-11T20:32:43.670126117+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T20:32:43.670556356+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T20:32:43.670783938+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"esjn2zid"}}
+{"time":"2024-11-11T20:32:43.670803584+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"esjn2zid"}}
+{"time":"2024-11-11T20:32:43.670809394+05:30","level":"INFO","msg":"sender: closed","stream_id":"esjn2zid"}
+{"time":"2024-11-11T20:32:43.670867466+05:30","level":"INFO","msg":"stream: closed","id":"esjn2zid"}

@@ -33,32 +33,37 @@ def play_episode(
 
     episode_steps = 0
     episode_return = 0
+    total_collision = 0
 
     while not all(dones):
         if (render):
             env.render()
             sleep(0.03)
 
-        acts = action_fn(obs)
+        acts = action_fn([obs, env.goals, env.currentPositions])
         nobs, rwds, dones, _ = env.step(np.array(acts))
         # print(f"Step: {episode_steps}")
+        total_collision += env.totalCollision
 
         episode_steps += 1
         if (episode_steps >= max_episode_length): # Some envs don't have done flags,
             dones = [True] * env.n_agents #  so manually set them here
 
+        # print(obs)
         if buffer is not None:
             buffer.store(
                 obs=obs,
                 acts=acts,
                 rwds=rwds,
+                goals=env.goals,
+                states=env.currentPositions,
                 nobs=nobs,
                 dones=dones,
             )
         episode_return += rwds[0] if reward_per_agent else sum(rwds)
         obs = nobs
 
-    return episode_return, episode_steps
+    return episode_return, episode_steps, total_collision
 
 def play_episode_eval(
     env,
@@ -82,7 +87,7 @@ def play_episode_eval(
             env.render()
             sleep(0.03)
 
-        acts = action_fn(obs)
+        acts = action_fn([obs, env.goals, env.currentPositions])
         nobs, rwds, dones, _ = env.step(np.array(acts))
         # print(f"Step: {episode_steps}")
         for a in range(env.n_agents):
@@ -97,6 +102,8 @@ def play_episode_eval(
                 obs=obs,
                 acts=acts,
                 rwds=rwds,
+                goals = env.goals,
+                states = env.currentPositions,
                 nobs=nobs,
                 dones=dones,
             )
@@ -139,10 +146,15 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
     env = GridWorld(config.max_episode_length)
 
     # env = create_env(config.env)
-    observation_dims = np.array([obs.shape[0] for obs in env.observation_space])
+    observation_dims = [obs.shape for obs in env.observation_space]
+    # print(observation_dims)
+    goal_dim = np.array([2 for _ in range(5)])
+    state_dim = np.array([2 for _ in range(5)])
     buffer = ReplayBuffer(
         capacity=config.replay_buffer_size,
         obs_dims=observation_dims, # TODO: change format of the replay buffer input??
+        goal_dim=goal_dim,
+        state_dim=state_dim,
         batch_size=config.batch_size,
     )
 
@@ -179,7 +191,7 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
 
     # Warm up:
     for _ in tqdm(range(config.warmup_episodes), bar_format=BAR_FORMAT, postfix="Warming up..."):
-        _, _ = play_episode(
+        _, _, _ = play_episode(
             env,
             buffer,
             max_episode_length=config.max_episode_length,
@@ -187,11 +199,12 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
         )
 
     eval_returns = []
+    eval_collisions = []
     with tqdm(total=config.total_steps, bar_format=BAR_FORMAT) as pbar:
         elapsed_steps = 0
         eval_count = 0
         while elapsed_steps < config.total_steps:
-            _, episode_steps = play_episode(
+            _, episode_steps, totalCol = play_episode(
                 env,
                 buffer,
                 max_episode_length=config.max_episode_length,
@@ -203,7 +216,9 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
                 for _ in range(config.train_repeats):
                     sample = buffer.sample()
                     if sample is not None:
-                        maddpg.update(sample)
+                        info = maddpg.update(sample)
+                        for k, v in info.items(): # Log actor and critic loss
+                            wandb.log({k:v}, step=elapsed_steps)
                 if config.log_grad_variance and elapsed_steps % config.log_grad_variance_interval == 0:
                     for agent in maddpg.agents:
                         for name, param in agent.policy.named_parameters():
@@ -215,31 +230,37 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
                 eval_count += 1
 
                 timestep_returns = []
+                totalCollision = []
                 for it in range(config.eval_iterations):
                     if (it==config.eval_iterations-1):
-                        timestep_returns.append(play_episode_eval(
-                                env,
-                                buffer,
-                                max_episode_length=config.max_episode_length,
-                                action_fn=maddpg.acts,
-                                reward_per_agent=config.reward_per_agent,
-                            )[0]
-                        )
+                        tr, _, col = play_episode_eval(
+                                        env,
+                                        buffer,
+                                        max_episode_length=config.max_episode_length,
+                                        action_fn=maddpg.acts,
+                                        reward_per_agent=config.reward_per_agent,
+                                    )
+                        timestep_returns.append(tr)
+                        totalCollision.append(col)
                     else:
-                        timestep_returns.append(play_episode(
-                                env,
-                                buffer,
-                                max_episode_length=config.max_episode_length,
-                                action_fn=maddpg.acts,
-                                reward_per_agent=config.reward_per_agent,
-                            )[0]
-                        )
+                        tr, _, col = play_episode(
+                                        env,
+                                        buffer,
+                                        max_episode_length=config.max_episode_length,
+                                        action_fn=maddpg.acts,
+                                        reward_per_agent=config.reward_per_agent,
+                                    )
+                        timestep_returns.append(tr)
+                        totalCollision.append(col)
+                        
                 
                 eval_returns.append( np.mean(timestep_returns) )
+                eval_collisions.append( np.mean(totalCollision))
                 pbar.set_postfix(eval_return=f"{np.round(np.mean(timestep_returns), 2)}", refresh=True)
                 wandb.log({
                     f"Return": np.mean(timestep_returns),
                     f"Timestep": int(time()),
+                    f"Collision" : np.mean(totalCollision),
                 }, step=elapsed_steps)
 
                 if config.render:

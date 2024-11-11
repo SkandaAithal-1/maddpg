@@ -3,7 +3,7 @@ from collections import Counter
 from torch import Tensor
 
 class ReplayBuffer:
-    def __init__(self, capacity, obs_dims, batch_size: int): # Todo fix types
+    def __init__(self, capacity, obs_dims, goal_dim, state_dim, batch_size: int): # Todo fix types
 
         self.capacity = int(capacity)
         self.entries = 0
@@ -14,21 +14,30 @@ class ReplayBuffer:
         self.max_obs_dim = np.max(obs_dims)
         self.n_agents = len(obs_dims)
 
+        self.goal_dim = goal_dim
+        self.state_dim = state_dim
+
         self.memory_obs = []
         self.memory_nobs = []
+        self.memory_goals = []
+        self.memory_states = []
         for ii in range(self.n_agents):
-            self.memory_obs.append( Tensor(self.capacity, obs_dims[ii]) )
-            self.memory_nobs.append( Tensor(self.capacity, obs_dims[ii]) )
+            self.memory_obs.append( Tensor(self.capacity, *(obs_dims[ii])) )
+            self.memory_nobs.append( Tensor(self.capacity, *(obs_dims[ii])) )
+            self.memory_goals.append( Tensor(self.capacity, goal_dim[ii]) )
+            self.memory_states.append( Tensor(self.capacity, state_dim[ii]) )
         self.memory_acts = Tensor(self.n_agents, self.capacity)
         self.memory_rwds = Tensor(self.n_agents, self.capacity)
         self.memory_dones = Tensor(self.n_agents, self.capacity)
 
-    def store(self, obs, acts, rwds, nobs, dones):
+    def store(self, obs, acts, rwds, goals, states, nobs, dones):
         store_index = self.entries % self.capacity
 
         for ii in range(self.n_agents):
             self.memory_obs[ii][store_index] = Tensor(obs[ii])
             self.memory_nobs[ii][store_index] = Tensor(nobs[ii])
+            self.memory_goals[ii][store_index] = Tensor(goals[ii])
+            self.memory_states[ii][store_index] = Tensor(states[ii])
         self.memory_acts[:,store_index] = Tensor(acts)
         self.memory_rwds[:,store_index] = Tensor(rwds)
         self.memory_dones[:,store_index] = Tensor(dones)
@@ -49,6 +58,8 @@ class ReplayBuffer:
             "acts": self.memory_acts[:,idxs],
             "rwds": self.memory_rwds[:,idxs],
             "nobs": [self.memory_nobs[ii][idxs] for ii in range(self.n_agents)],
+            "goals": [self.memory_goals[ii][idxs] for ii in range(self.n_agents)],
+            "states": [self.memory_states[ii][idxs] for ii in range(self.n_agents)],
             "dones": self.memory_dones[:,idxs],
         }
     

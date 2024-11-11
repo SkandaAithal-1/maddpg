@@ -2,6 +2,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 import cv2
+import wandb
 from gym import spaces
 
 class GridWorld:
@@ -20,11 +21,12 @@ class GridWorld:
         self.maxEpisodeLength = maxEpisodeLength
         self.n_agents = 5
         self.dim = [20, 20]
+        self.totalCollision = 0
         self.stepCount = 0
 
         self.action_space = spaces.Tuple(tuple(self.n_agents*[spaces.Discrete(5)]))
         self.observation_space = spaces.Tuple(tuple(self.n_agents*[
-            spaces.Box(low=0, high=1, shape=(9,), dtype=np.float32)
+            spaces.Box(low=0, high=1, shape=(20, 20), dtype=np.float32)
         ]))
 
         # self.env = np.array(self.generate_grid())
@@ -56,11 +58,11 @@ class GridWorld:
         #     x, y = np.random.randint(1, self.dim[0] - 1), np.random.randint(1, self.dim[1] - 1)
         #     self.env[x, y] = 1
         
-        plt.figure(figsize=(8, 8))
-        plt.imshow(self.env, cmap="binary", origin="upper")
-        plt.title("50x50 Binary Grid World Map (1: Wall, 0: Free Space)")
-        plt.axis("off")
-        plt.show()
+        # plt.figure(figsize=(8, 8))
+        # plt.imshow(self.env, cmap="binary", origin="upper")
+        # plt.title("50x50 Binary Grid World Map (1: Wall, 0: Free Space)")
+        # plt.axis("off")
+        # plt.show()
 
         self.start = [[12, 12], [2, 3], [3, 3], [1, 4], [10, 1]] 
         self.Goals = [[5, 14], [18, 9], [10, 2], [2, 14], [14, 18]] 
@@ -143,7 +145,7 @@ class GridWorld:
         # Make observations for the agents
         obs_ = []
         for a in range(self.n_agents):
-            obs_.append(self.makeObs(a))
+            obs_.append(self.env)
         return obs_
     
     def step(self, actions : list):
@@ -171,29 +173,34 @@ class GridWorld:
         timeRew = -0.1
         rewards = [0]*self.n_agents
         done = [0]*self.n_agents
+        self.totalCollision = 0
 
         for a in range(self.n_agents):
             if actions[a]==0:
                 if (self.env[self.currentPositions[a][0]-1, self.currentPositions[a][1]]==1):
                     rewards[a] = collisionRew 
+                    self.totalCollision+=1
                 else:
                     self.currentPositions[a] = [self.currentPositions[a][0]-1, self.currentPositions[a][1]]
             
             elif (actions[a]==1):
                 if (self.env[self.currentPositions[a][0]+1, self.currentPositions[a][1]]==1):
                     rewards[a] = collisionRew
+                    self.totalCollision+=1
                 else:
                     self.currentPositions[a] = [self.currentPositions[a][0]+1, self.currentPositions[a][1]]
 
             elif (actions[a]==2):
                 if (self.env[self.currentPositions[a][0], self.currentPositions[a][1]-1]==1):
                     rewards[a]= collisionRew
+                    self.totalCollision+=1
                 else:
                     self.currentPositions[a] = [self.currentPositions[a][0], self.currentPositions[a][1]-1]
             
             elif (actions[a]==3):
                 if (self.env[self.currentPositions[a][0], self.currentPositions[a][1]+1]==1):
                     rewards[a] = collisionRew
+                    self.totalCollision+=1
                 else:
                     self.currentPositions[a] = [self.currentPositions[a][0], self.currentPositions[a][1]+1]
             
@@ -218,7 +225,7 @@ class GridWorld:
             else:
                 rewards[a] = timeRew
             
-            obs_.append(self.makeObs(a))
+            obs_.append(self.env)
         
         return obs_, rewards, done, {}
     

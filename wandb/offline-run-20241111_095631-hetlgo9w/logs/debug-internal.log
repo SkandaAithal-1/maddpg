@@ -1,0 +1,15 @@
+{"time":"2024-11-11T09:56:31.377753253+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T09:56:31.377779031+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241111_095631-hetlgo9w/logs/debug-core.log"}
+{"time":"2024-11-11T09:56:31.481828714+05:30","level":"INFO","msg":"created new stream","id":"hetlgo9w"}
+{"time":"2024-11-11T09:56:31.481867564+05:30","level":"INFO","msg":"stream: started","id":"hetlgo9w"}
+{"time":"2024-11-11T09:56:31.48193358+05:30","level":"INFO","msg":"sender: started","stream_id":"hetlgo9w"}
+{"time":"2024-11-11T09:56:31.481929687+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hetlgo9w"}}
+{"time":"2024-11-11T09:56:31.482032225+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"hetlgo9w"}}
+{"time":"2024-11-11T09:56:31.494977508+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T09:56:33.485712106+05:30","level":"INFO","msg":"stream: closing","id":"hetlgo9w"}
+{"time":"2024-11-11T09:56:33.485741763+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T09:56:33.486128366+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T09:56:33.486293474+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"hetlgo9w"}}
+{"time":"2024-11-11T09:56:33.486314172+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hetlgo9w"}}
+{"time":"2024-11-11T09:56:33.486361095+05:30","level":"INFO","msg":"sender: closed","stream_id":"hetlgo9w"}
+{"time":"2024-11-11T09:56:33.486380914+05:30","level":"INFO","msg":"stream: closed","id":"hetlgo9w"}

@@ -1,0 +1,16 @@
+{"time":"2024-11-11T21:24:57.672762532+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T21:24:57.672775494+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/run-20241111_212457-ijsxq4em/logs/debug-core.log"}
+{"time":"2024-11-11T21:24:57.776809925+05:30","level":"INFO","msg":"created new stream","id":"ijsxq4em"}
+{"time":"2024-11-11T21:24:57.776855573+05:30","level":"INFO","msg":"stream: started","id":"ijsxq4em"}
+{"time":"2024-11-11T21:24:57.776996307+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"ijsxq4em"}}
+{"time":"2024-11-11T21:24:57.776910848+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ijsxq4em"}}
+{"time":"2024-11-11T21:24:57.777110736+05:30","level":"INFO","msg":"sender: started","stream_id":"ijsxq4em"}
+{"time":"2024-11-11T21:24:58.418560664+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T21:25:41.317557028+05:30","level":"INFO","msg":"stream: closing","id":"ijsxq4em"}
+{"time":"2024-11-11T21:25:41.317584221+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T21:25:41.318173521+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T21:25:47.324915971+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-11T21:25:47.791479453+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"ijsxq4em"}}
+{"time":"2024-11-11T21:25:47.791579948+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ijsxq4em"}}
+{"time":"2024-11-11T21:25:47.791609128+05:30","level":"INFO","msg":"sender: closed","stream_id":"ijsxq4em"}
+{"time":"2024-11-11T21:25:47.791704906+05:30","level":"INFO","msg":"stream: closed","id":"ijsxq4em"}

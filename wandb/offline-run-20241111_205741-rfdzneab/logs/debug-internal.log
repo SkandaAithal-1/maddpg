@@ -1,0 +1,15 @@
+{"time":"2024-11-11T20:57:41.50352412+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-11T20:57:41.503543071+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241111_205741-rfdzneab/logs/debug-core.log"}
+{"time":"2024-11-11T20:57:41.606687206+05:30","level":"INFO","msg":"created new stream","id":"rfdzneab"}
+{"time":"2024-11-11T20:57:41.606726669+05:30","level":"INFO","msg":"stream: started","id":"rfdzneab"}
+{"time":"2024-11-11T20:57:41.606810171+05:30","level":"INFO","msg":"sender: started","stream_id":"rfdzneab"}
+{"time":"2024-11-11T20:57:41.60679226+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rfdzneab"}}
+{"time":"2024-11-11T20:57:41.606835943+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"rfdzneab"}}
+{"time":"2024-11-11T20:57:41.62365287+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-11T20:57:45.747172551+05:30","level":"INFO","msg":"stream: closing","id":"rfdzneab"}
+{"time":"2024-11-11T20:57:45.747204065+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-11T20:57:45.747771694+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-11T20:57:45.747995596+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"rfdzneab"}}
+{"time":"2024-11-11T20:57:45.7480154+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rfdzneab"}}
+{"time":"2024-11-11T20:57:45.748056633+05:30","level":"INFO","msg":"sender: closed","stream_id":"rfdzneab"}
+{"time":"2024-11-11T20:57:45.748082863+05:30","level":"INFO","msg":"stream: closed","id":"rfdzneab"}

@@ -1,16 +1,21 @@
 from torch import nn
+from torch import cat, Tensor
 
 class ActorNetwork(nn.Module):
     def __init__(self, obs_dim, hidden_dim_width, n_actions):
         super().__init__()
         self.obs_dim = obs_dim
+        
         self.layers = nn.Sequential(*[
-            nn.Linear(obs_dim, hidden_dim_width), nn.ReLU(),
+            nn.Linear(64*6*6+4, hidden_dim_width), nn.ReLU(), # Calculate the input dimension : Here it is 20
             nn.Linear(hidden_dim_width, hidden_dim_width), nn.ReLU(),
             nn.Linear(hidden_dim_width, n_actions),
         ])
 
     def forward(self, obs):
+        # cnnOut = self.cnnlayer(obs.unsqueeze(-3))
+        # cnnOut = cnnOut.view(-1, 64*6*6)
+        # cnnOut = cat((cnnOut, Tensor(goals), Tensor(states)), dim=1)
         return self.layers(obs)
 
     def hard_update(self, source):
@@ -27,7 +32,7 @@ class CriticNetwork(nn.Module):
         input_size = sum(all_obs_dims) + sum(all_acts_dims)
 
         self.layers = nn.Sequential(*[
-            nn.Linear(input_size, hidden_dim_width),
+            nn.Linear(11565, hidden_dim_width),
             nn.ReLU(),
             nn.Linear(hidden_dim_width, hidden_dim_width),
             nn.ReLU(),
@@ -44,3 +49,24 @@ class CriticNetwork(nn.Module):
     def soft_update(self, source, t):
         for target_param, source_param in zip(self.parameters(), source.parameters()):
             target_param.data.copy_((1 - t) * target_param.data + t * source_param.data)
+
+class CNNHead(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.cnnlayer = nn.Sequential(*[
+            nn.Conv2d(1, 32, 3),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.Conv2d(32, 64, 3, stride=3),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+        ])
+    
+    def forward(self, obs):
+        out = self.cnnlayer(obs.unsqueeze(-3))
+        out = out.view(-1, 64*6*6)
+        return out
+    
+
+
+
