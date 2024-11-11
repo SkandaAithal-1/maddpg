@@ -45,7 +45,7 @@ def play_episode(
         acts = action_fn([obs, goals, states])
         nobs, rwds, dones, _ = env.step(acts)
         ngoals = env.goals
-        nstates = env.states
+        nstates = env.currentPositions
         # print(f"Step: {episode_steps}")
         total_collision += env.totalCollision
 
@@ -102,7 +102,7 @@ def play_episode_eval(
         acts = action_fn([obs, goals, states])
         nobs, rwds, dones, _ = env.step(np.array(acts))
         ngoals = env.goals
-        nstates = env.states
+        nstates = env.currentPositions
         # print(f"Step: {episode_steps}")
         # for a in range(env.n_agents):
         #     paths[a].append(env.currentPositions[a])

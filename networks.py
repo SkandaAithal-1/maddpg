@@ -7,7 +7,7 @@ class ActorNetwork(nn.Module):
         self.obs_dim = obs_dim
         
         self.layers = nn.Sequential(*[
-            nn.Linear(1*6*6+4, hidden_dim_width), nn.ReLU(), # Calculate the input dimension : Here it is 20
+            nn.Linear(1*3*3+4, hidden_dim_width), nn.ReLU(), # Calculate the input dimension : Here it is 20
             nn.Linear(hidden_dim_width, hidden_dim_width), nn.ReLU(),
             nn.Linear(hidden_dim_width, n_actions),
         ])
@@ -54,7 +54,7 @@ class CNNHead(nn.Module):
     def __init__(self):
         super().__init__()
         self.cnnlayer = nn.Sequential(*[
-            nn.Conv2d(1, 4, 3),
+            nn.Conv2d(1, 4, 3, stride=2),
             nn.BatchNorm2d(4),
             nn.ReLU(),
             nn.Conv2d(4, 1, 3, stride=3),
@@ -64,7 +64,7 @@ class CNNHead(nn.Module):
     
     def forward(self, obs):
         out = self.cnnlayer(obs.unsqueeze(-3))
-        out = out.view(-1, 1*6*6)
+        out = out.view(-1, 1*3*3)
         return out
     
 
