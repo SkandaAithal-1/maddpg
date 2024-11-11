@@ -400,13 +400,13 @@ if __name__ == "__main__":
     elif config.offline_wandb: # Don't sync to wandb servers during run
         wandb_mode = "offline"
 
+    os.environ["WANDB_API_KEY"] = "1ac71094d6d9da7d683329e310ddb375ce3254fb"
     wandb_run = wandb.init(
         project=config.wandb_project_name,
         name=f"{str(date.today())}-maddpg-{config.seed}",
         entity=config.user_name,
         mode=wandb_mode,
     )
-    os.environ["WANDB_API_KEY"] = "1ac71094d6d9da7d683329e310ddb375ce3254fb"
     wandb.config.update(config)
 
     _ = train(config, wandb_run)
