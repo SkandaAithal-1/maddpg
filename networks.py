@@ -32,7 +32,7 @@ class CriticNetwork(nn.Module):
         input_size = sum(all_obs_dims) + sum(all_acts_dims)
 
         self.layers = nn.Sequential(*[
-            nn.Linear(11565, hidden_dim_width),
+            nn.Linear(90, hidden_dim_width),
             nn.ReLU(),
             nn.Linear(hidden_dim_width, hidden_dim_width),
             nn.ReLU(),

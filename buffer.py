@@ -34,7 +34,7 @@ class ReplayBuffer:
         self.memory_rwds = Tensor(self.n_agents, self.capacity)
         self.memory_dones = Tensor(self.n_agents, self.capacity)
 
-    def store(self, obs, acts, rwds, goals, states, nobs, dones):
+    def store(self, obs, acts, rwds, goals, ngoals, states, nstates, nobs, dones):
         store_index = self.entries % self.capacity
 
         for ii in range(self.n_agents):
@@ -42,6 +42,8 @@ class ReplayBuffer:
             self.memory_nobs[ii][store_index] = Tensor(nobs[ii])
             self.memory_goals[ii][store_index] = Tensor(goals[ii])
             self.memory_states[ii][store_index] = Tensor(states[ii])
+            self.memory_ngoals[ii][store_index] = Tensor(ngoals[ii])
+            self.memory_nstates[ii][store_index] = Tensor(nstates[ii])
         self.memory_acts[:,store_index] = Tensor(acts)
         self.memory_rwds[:,store_index] = Tensor(rwds)
         self.memory_dones[:,store_index] = Tensor(dones)
