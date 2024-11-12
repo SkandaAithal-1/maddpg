@@ -31,7 +31,9 @@ def play_episode(
     obs = env.reset()
     dones = [False] * env.n_agents
     states = env.currentPositions
+    states = [[x/20 for x in state] for state in states]
     goals = env.goals
+    goals = [[x/20 for x in goal] for goal in goals]
 
     episode_steps = 0
     episode_return = 0
@@ -45,7 +47,9 @@ def play_episode(
         acts = action_fn([obs, goals, states])
         nobs, rwds, dones, _ = env.step(acts)
         ngoals = env.goals
+        ngoals = [[x/20 for x in ngoal] for ngoal in ngoals]
         nstates = env.currentPositions
+        nstates = [[x/20 for x in nstate] for nstate in nstates]
         # print(f"Step: {episode_steps}")
         total_collision += env.totalCollision
 
@@ -84,7 +88,9 @@ def play_episode_eval(
     obs = env.reset(flag=True)
     dones = [False] * env.n_agents
     states = env.currentPositions
+    states = [[x/20 for x in state] for state in states]
     goals = env.goals
+    goals = [[x/20 for x in goal] for goal in goals]
 
 
     # paths = [[o] for o in env.currentPositions]
@@ -102,7 +108,9 @@ def play_episode_eval(
         acts = action_fn([obs, goals, states])
         nobs, rwds, dones, _ = env.step(np.array(acts))
         ngoals = env.goals
+        ngoals = [[x/20 for x in ngoal] for ngoal in ngoals]
         nstates = env.currentPositions
+        nstates = [[x/20 for x in nstate] for nstate in nstates]
         # print(f"Step: {episode_steps}")
         # for a in range(env.n_agents):
         #     paths[a].append(env.currentPositions[a])
@@ -198,6 +206,7 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
         env=env,
         critic_lr=config.critic_lr,
         actor_lr=config.actor_lr,
+        cnn_lr=config.cnn_lr,
         gradient_clip=config.gradient_clip,
         hidden_dim_width=config.hidden_dim_width,
         gamma=config.gamma,
@@ -329,6 +338,7 @@ if __name__ == "__main__":
     parser.add_argument("--hidden_dim_width", default=16, type=int)
     parser.add_argument("--critic_lr", default=3e-4, type=float)
     parser.add_argument("--actor_lr", default=3e-4, type=float)
+    parser.add_argument("--cnn_lr", default=3e-4, type=float)
     parser.add_argument("--gradient_clip", default=1.0, type=float)
     parser.add_argument("--gamma", default=0.99, type=float)
     parser.add_argument("--soft_update_size", default=0.01, type=float)

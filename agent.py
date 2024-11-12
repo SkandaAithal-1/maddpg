@@ -68,10 +68,10 @@ class Agent:
 
         self.optim_critic.zero_grad()
         loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.gradient_clip)
+        critic_grad_norm = torch.nn.utils.clip_grad_norm_(self.critic.parameters(), self.gradient_clip)
         self.optim_critic.step()
 
-        return loss
+        return loss, critic_grad_norm
 
     def update_actor(self, all_obs, agent_obs, sampled_actions):
 
@@ -86,10 +86,10 @@ class Agent:
 
         self.optim_actor.zero_grad()
         loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.policy.parameters(), self.gradient_clip)
+        actor_grad_norm = torch.nn.utils.clip_grad_norm_(self.policy.parameters(), self.gradient_clip)
         self.optim_actor.step()
 
-        return loss
+        return loss, actor_grad_norm
 
     def soft_update(self):
         self.target_critic.soft_update(self.critic, self.soft_update_size)

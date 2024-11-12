@@ -14,6 +14,7 @@ class MADDPG:
         env,
         critic_lr : float,
         actor_lr : float,
+        cnn_lr : float,
         gradient_clip : float,
         hidden_dim_width : int,
         gamma : float,
@@ -45,7 +46,7 @@ class MADDPG:
         ] if pretrained_agents is None else pretrained_agents
 
         self.embedder = CNNHead()
-        self.embed_optim = torch.optim.Adam(self.embedder.parameters(), lr=3e-4, eps=0.001)
+        self.embed_optim = torch.optim.Adam(self.embedder.parameters(), lr=cnn_lr, eps=0.001)
 
         self.return_std = RunningMeanStd(shape=(self.n_agents,)) if standardise_rewards else None
         self.gradient_estimator = gradient_estimator # Keep reference to GE object
@@ -111,7 +112,7 @@ class MADDPG:
             batched_obs = torch.cat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii], batched_goals, batched_states), axis=1)
             batched_nobs = torch.cat((sample['nobs'][ii], sample['ngoals'][ii], sample['nstates'][ii], batched_ngoals, batched_nstates), axis=1)
 
-            critic_loss = agent.update_critic(
+            critic_loss, critic_grad_norm = agent.update_critic(
                 all_obs=batched_obs.detach(),
                 all_nobs=batched_nobs.detach(),
                 target_actions_per_agent=target_actions_one_hot,
@@ -121,7 +122,7 @@ class MADDPG:
                 gamma=self.gamma,
             )
 
-            actor_loss = agent.update_actor(
+            actor_loss, actor_grad_norm = agent.update_actor(
                 all_obs=batched_obs,
                 agent_obs=torch.concat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii]), axis=1),
                 sampled_actions=sampled_actions_one_hot,
@@ -129,6 +130,8 @@ class MADDPG:
 
             info[f"Actor_loss_agent_{ii}"] = actor_loss
             info[f"Critic_loss_agent_{ii}"] = critic_loss
+            info[f"Actor_grad_norm_agent_{ii}"] = actor_grad_norm
+            info[f"Critic_grad_norm_agent_{ii}"] = critic_grad_norm
 
         self.embed_optim.step()
 

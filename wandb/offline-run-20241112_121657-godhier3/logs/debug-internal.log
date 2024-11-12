@@ -1,0 +1,15 @@
+{"time":"2024-11-12T12:16:57.691799424+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T12:16:57.691818895+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_121657-godhier3/logs/debug-core.log"}
+{"time":"2024-11-12T12:16:57.79416668+05:30","level":"INFO","msg":"created new stream","id":"godhier3"}
+{"time":"2024-11-12T12:16:57.794185495+05:30","level":"INFO","msg":"stream: started","id":"godhier3"}
+{"time":"2024-11-12T12:16:57.794201526+05:30","level":"INFO","msg":"sender: started","stream_id":"godhier3"}
+{"time":"2024-11-12T12:16:57.794231225+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"godhier3"}}
+{"time":"2024-11-12T12:16:57.794198149+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"godhier3"}}
+{"time":"2024-11-12T12:16:57.800684366+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T12:16:59.482442696+05:30","level":"INFO","msg":"stream: closing","id":"godhier3"}
+{"time":"2024-11-12T12:16:59.482471847+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T12:16:59.482856826+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T12:16:59.483111219+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"godhier3"}}
+{"time":"2024-11-12T12:16:59.483124732+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"godhier3"}}
+{"time":"2024-11-12T12:16:59.483165476+05:30","level":"INFO","msg":"sender: closed","stream_id":"godhier3"}
+{"time":"2024-11-12T12:16:59.483184324+05:30","level":"INFO","msg":"stream: closed","id":"godhier3"}

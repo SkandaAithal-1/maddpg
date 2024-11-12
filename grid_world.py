@@ -223,7 +223,7 @@ class GridWorld:
                 done[a] = 1
                 rewards[a] = goalRew
             else:
-                rewards[a] = timeRew
+                rewards[a] += timeRew
             
             obs_.append(self.env)
         
