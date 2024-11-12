@@ -168,8 +168,8 @@ class GridWorld:
         # for a in range(self.n_agents):
         #     self.env[self.currentPositions[a][0], self.currentPositions[a][1]] = 0
         self.stepCount += 1
-        collisionRew = 0
-        goalRew = 1
+        collisionRew = -1
+        goalRew = 10
         timeRew = 0
         rewards = [0]*self.n_agents
         done = [0]*self.n_agents
