@@ -432,7 +432,7 @@ if __name__ == "__main__":
     os.environ["WANDB_API_KEY"] = "1ac71094d6d9da7d683329e310ddb375ce3254fb"
     wandb_run = wandb.init(
         project=config.wandb_project_name,
-        name=f"{str(date.today())}-maddpg-{config.seed}",
+        name=f"{str(date.today())}-maddpg-no_negative-{config.seed}",
         entity=config.user_name,
         mode=wandb_mode,
     )
