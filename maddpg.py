@@ -105,9 +105,10 @@ class MADDPG:
         batched_states = torch.concat(sample['states'], axis=1)
         batched_nstates = torch.concat(sample['nstates'], axis=1)
 
+        self.embed_optim.zero_grad()
+
         for ii, agent in enumerate(self.agents):
 
-            self.embed_optim.zero_grad()
 
             batched_obs = torch.cat((sample['obs'][ii], sample['goals'][ii], sample['states'][ii], batched_goals, batched_states), axis=1)
             batched_nobs = torch.cat((sample['nobs'][ii], sample['ngoals'][ii], sample['nstates'][ii], batched_ngoals, batched_nstates), axis=1)
