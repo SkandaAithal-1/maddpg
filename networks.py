@@ -1,5 +1,6 @@
 from torch import nn
 from torch import cat, Tensor
+from torch import normal, exp, tanh
 
 class ActorNetwork(nn.Module):
     def __init__(self, obs_dim, hidden_dim_width, n_actions):
@@ -7,16 +8,23 @@ class ActorNetwork(nn.Module):
         self.obs_dim = obs_dim
         
         self.layers = nn.Sequential(*[
-            nn.Linear(1*8+4, hidden_dim_width), nn.ReLU(), # Calculate the input dimension : Here it is 20
+            nn.Linear(1*9+4, hidden_dim_width), nn.ReLU(), # Calculate the input dimension : Here it is 20
             nn.Linear(hidden_dim_width, hidden_dim_width), nn.ReLU(),
-            nn.Linear(hidden_dim_width, n_actions),
+            # nn.Linear(hidden_dim_width, n_actions),
         ])
+        self.mean = nn.Linear(hidden_dim_width, n_actions)
+        self.std = nn.Linear(hidden_dim_width, n_actions)
 
     def forward(self, obs):
         # cnnOut = self.cnnlayer(obs.unsqueeze(-3))
         # cnnOut = cnnOut.view(-1, 64*6*6)
         # cnnOut = cat((cnnOut, Tensor(goals), Tensor(states)), dim=1)
-        return self.layers(obs)
+        x = self.layers(obs)
+        mean = self.mean(x)
+        std = exp(self.std(x))
+        dist = normal(mean, std)
+
+        return tanh(dist)
 
     def hard_update(self, source):
         for target_param, source_param in zip(self.parameters(), source.parameters()):
@@ -53,19 +61,23 @@ class CriticNetwork(nn.Module):
 class CNNHead(nn.Module):
     def __init__(self):
         super().__init__()
+        self.final_depth = 1
         self.cnnlayer = nn.Sequential(*[
-            nn.Conv2d(1, 4, 3, stride=2),
+            nn.Conv2d(1, 4, 5, stride=3),
             nn.BatchNorm2d(4),
             nn.ReLU(),
-            nn.Conv2d(4, 8, 3, stride=3),
+            nn.Conv2d(4, 8, 5, stride=3),
             nn.BatchNorm2d(8),
             nn.ReLU(),
-            nn.Conv2d(8, 8, 3)
+            nn.Conv2d(8, 4, 5, stride=3),
+            nn.BatchNorm2d(4),
+            nn.ReLU(),
+            nn.Conv2d(4, 1, 5, stride=3)
         ])
     
     def forward(self, obs):
         out = self.cnnlayer(obs.unsqueeze(-3))
-        out = out.view(-1, 1*8)
+        out = out.view(-1, 1*9)
         return out
     
 

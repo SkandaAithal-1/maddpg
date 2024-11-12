@@ -1,0 +1,15 @@
+{"time":"2024-11-12T21:59:50.722952379+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T21:59:50.722970133+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_215950-g9zaxgpu/logs/debug-core.log"}
+{"time":"2024-11-12T21:59:50.826215516+05:30","level":"INFO","msg":"created new stream","id":"g9zaxgpu"}
+{"time":"2024-11-12T21:59:50.826253545+05:30","level":"INFO","msg":"stream: started","id":"g9zaxgpu"}
+{"time":"2024-11-12T21:59:50.826487038+05:30","level":"INFO","msg":"sender: started","stream_id":"g9zaxgpu"}
+{"time":"2024-11-12T21:59:50.826320021+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"g9zaxgpu"}}
+{"time":"2024-11-12T21:59:50.826426214+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"g9zaxgpu"}}
+{"time":"2024-11-12T21:59:50.84395468+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T21:59:52.122627544+05:30","level":"INFO","msg":"stream: closing","id":"g9zaxgpu"}
+{"time":"2024-11-12T21:59:52.122646636+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T21:59:52.122985269+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T21:59:52.12310999+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"g9zaxgpu"}}
+{"time":"2024-11-12T21:59:52.123125419+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"g9zaxgpu"}}
+{"time":"2024-11-12T21:59:52.123133036+05:30","level":"INFO","msg":"sender: closed","stream_id":"g9zaxgpu"}
+{"time":"2024-11-12T21:59:52.123157332+05:30","level":"INFO","msg":"stream: closed","id":"g9zaxgpu"}

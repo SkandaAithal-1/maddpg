@@ -1,0 +1,15 @@
+{"time":"2024-11-12T22:44:35.904558328+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T22:44:35.904588966+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_224435-gsfdnia8/logs/debug-core.log"}
+{"time":"2024-11-12T22:44:36.008289328+05:30","level":"INFO","msg":"created new stream","id":"gsfdnia8"}
+{"time":"2024-11-12T22:44:36.008336427+05:30","level":"INFO","msg":"stream: started","id":"gsfdnia8"}
+{"time":"2024-11-12T22:44:36.008403784+05:30","level":"INFO","msg":"sender: started","stream_id":"gsfdnia8"}
+{"time":"2024-11-12T22:44:36.008394223+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"gsfdnia8"}}
+{"time":"2024-11-12T22:44:36.008530831+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"gsfdnia8"}}
+{"time":"2024-11-12T22:44:36.025782323+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T22:44:37.449986007+05:30","level":"INFO","msg":"stream: closing","id":"gsfdnia8"}
+{"time":"2024-11-12T22:44:37.450022976+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T22:44:37.450878133+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T22:44:37.451279288+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"gsfdnia8"}}
+{"time":"2024-11-12T22:44:37.45133079+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"gsfdnia8"}}
+{"time":"2024-11-12T22:44:37.451403361+05:30","level":"INFO","msg":"sender: closed","stream_id":"gsfdnia8"}
+{"time":"2024-11-12T22:44:37.451461683+05:30","level":"INFO","msg":"stream: closed","id":"gsfdnia8"}

@@ -48,13 +48,13 @@ class Agent:
 
     def act_behaviour(self, obs):
         policy_output = self.policy(Tensor(obs))
-        gs_output = self.gradient_estimator(policy_output, need_gradients=False)
-        return torch.argmax(gs_output, dim=-1)
+        # gs_output = self.gradient_estimator(policy_output, need_gradients=False)
+        return policy_output
 
     def act_target(self, obs):
         policy_output = self.target_policy(Tensor(obs))
-        gs_output = self.gradient_estimator(policy_output, need_gradients=False)
-        return torch.argmax(gs_output, dim=-1)
+        # gs_output = self.gradient_estimator(policy_output, need_gradients=False)
+        return policy_output
 
     def update_critic(self, all_obs, all_nobs, target_actions_per_agent, sampled_actions_per_agent, rewards, dones, gamma):
         target_actions = torch.concat(target_actions_per_agent, axis=1)
@@ -76,10 +76,10 @@ class Agent:
     def update_actor(self, all_obs, agent_obs, sampled_actions):
 
         policy_outputs = self.policy(agent_obs)
-        gs_outputs = self.gradient_estimator(policy_outputs)
+        # gs_outputs = self.gradient_estimator(policy_outputs)
         
         _sampled_actions = deepcopy(sampled_actions)
-        _sampled_actions[self.agent_idx] = gs_outputs
+        _sampled_actions[self.agent_idx] = policy_outputs 
 
         loss = - self.critic(torch.concat((all_obs, *_sampled_actions), axis=1)).mean()
         loss += (policy_outputs ** 2).mean() * self.policy_regulariser

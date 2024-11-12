@@ -4,6 +4,7 @@ from typing import List
 import torch
 from tqdm import tqdm; BAR_FORMAT = "{l_bar}{bar:50}{r_bar}{bar:-10b}"
 from agent import Agent
+from PIL import Image
 from buffer import ReplayBuffer
 import numpy as np
 import scipy.stats as st
@@ -20,6 +21,9 @@ import yaml
 import os.path as path
 from grid_world import GridWorld
 
+GOALS = [[255, 0, 0], [0, 255,0], [0, 0, 255], [255, 255, 0], [255, 0, 255]]
+AGENTS = [[0, 255, 255], [255, 127, 127], [127, 255, 127], [127, 127, 255], [120, 200, 225]]
+
 def play_episode(
     env,
     buffer : ReplayBuffer | None,
@@ -28,7 +32,8 @@ def play_episode(
     render=False,
     reward_per_agent=False,
 ):
-    obs = env.reset()
+    ob = np.array(env.reset())
+    obs = [a[:,:,0]/255 for a in ob]
     dones = [False] * env.n_agents
     states = env.currentPositions
     states = [[x/20 for x in state] for state in states]
@@ -45,7 +50,11 @@ def play_episode(
             sleep(0.03)
 
         acts = action_fn([obs, goals, states])
-        nobs, rwds, dones, _ = env.step(acts)
+        nob, rwds, dones, _ = env.step(acts)
+        nob = np.array(nob)
+        nobs = []
+        for a in nob:
+            nobs.append(a[:,:,0]/255)
         ngoals = env.goals
         ngoals = [[x/20 for x in ngoal] for ngoal in ngoals]
         nstates = env.currentPositions
@@ -85,16 +94,27 @@ def play_episode_eval(
     render=False,
     reward_per_agent=False,
 ):
-    obs = env.reset(flag=True)
+    ob = np.array(env.reset(flag=True))
+    obs = []
+    for a in ob:
+        obs.append(a[:,:,0])
+    # obs = torch.Tensor([torch.Tensor(a).permute(2, 0, 1) for a in obs])
+    # print(obs[0].shape)
+    ImageArray = []
+    map = env.env.copy()
     dones = [False] * env.n_agents
+
     states = env.currentPositions
+    for ii in range(env.n_agents):
+        map[states[ii]] = AGENTS[ii]
     states = [[x/20 for x in state] for state in states]
+
     goals = env.goals
+    for ii in range(env.n_agents):
+        map[goals[ii]] = GOALS[ii]
     goals = [[x/20 for x in goal] for goal in goals]
 
-
-    # paths = [[o] for o in env.currentPositions]
-    # print(paths)
+    ImageArray.append(Image.fromarray(map))
 
     episode_steps = 0
     episode_return = 0
@@ -106,11 +126,23 @@ def play_episode_eval(
             sleep(0.03)
 
         acts = action_fn([obs, goals, states])
-        nobs, rwds, dones, _ = env.step(np.array(acts))
+        nob, rwds, dones, _ = env.step(np.array(acts).squeeze())
+        nob = np.array(nob)
+        nobs = []
+        for a in nob:
+            nobs.append(a[:,:,0]/255)
         ngoals = env.goals
         ngoals = [[x/20 for x in ngoal] for ngoal in ngoals]
+
         nstates = env.currentPositions
+        for ii in range(env.n_agents):
+            map[goals[ii]] = GOALS[ii]
+
         nstates = [[x/20 for x in nstate] for nstate in nstates]
+        for ii in range(env.n_agents):
+            map[states[ii]] = AGENTS[ii]
+        
+        ImageArray.append(Image.fromarray(map))
         # print(f"Step: {episode_steps}")
         # for a in range(env.n_agents):
         #     paths[a].append(env.currentPositions[a])
@@ -137,6 +169,8 @@ def play_episode_eval(
         goals = ngoals
         states = nstates
     
+    frameOne = ImageArray[0]
+    frameOne.save("Path_i.gif", format="GIF", append_images=ImageArray, save_all=True, duration=100, loop=0)
     # tempMap = -1*np.array(env.env)*255 + 255
     # plt.figure(figsize=(8, 8))
     # plt.imshow(tempMap, cmap="gray", origin="upper")
@@ -174,12 +208,14 @@ def train(config: argparse.Namespace, wandb_run: Run | RunDisabled | None):
 
     # env = create_env(config.env)
     observation_dims = [obs.shape for obs in env.observation_space]
+    action_dims = [act.shape for act in env.action_space]
     # print(observation_dims)
     goal_dim = np.array([2 for _ in range(5)])
     state_dim = np.array([2 for _ in range(5)])
     buffer = ReplayBuffer(
         capacity=config.replay_buffer_size,
         obs_dims=observation_dims, # TODO: change format of the replay buffer input??
+        act_dim=action_dims,
         goal_dim=goal_dim,
         state_dim=state_dim,
         batch_size=config.batch_size,
@@ -432,7 +468,7 @@ if __name__ == "__main__":
     os.environ["WANDB_API_KEY"] = "1ac71094d6d9da7d683329e310ddb375ce3254fb"
     wandb_run = wandb.init(
         project=config.wandb_project_name,
-        name=f"{str(date.today())}-maddpg-no_negative-{config.seed}",
+        name=f"{str(date.today())}-maddpg-{config.seed}",
         entity=config.user_name,
         mode=wandb_mode,
     )

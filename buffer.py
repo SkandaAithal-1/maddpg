@@ -3,7 +3,7 @@ from collections import Counter
 from torch import Tensor
 
 class ReplayBuffer:
-    def __init__(self, capacity, obs_dims, goal_dim, state_dim, batch_size: int): # Todo fix types
+    def __init__(self, capacity, obs_dims, act_dim, goal_dim, state_dim, batch_size: int): # Todo fix types
 
         self.capacity = int(capacity)
         self.entries = 0
@@ -23,6 +23,7 @@ class ReplayBuffer:
         self.memory_states = []
         self.memory_ngoals = []
         self.memory_nstates = []
+        self.memory_acts = []
         for ii in range(self.n_agents):
             self.memory_obs.append( Tensor(self.capacity, *(obs_dims[ii])) )
             self.memory_nobs.append( Tensor(self.capacity, *(obs_dims[ii])) )
@@ -30,7 +31,7 @@ class ReplayBuffer:
             self.memory_states.append( Tensor(self.capacity, state_dim[ii]) )
             self.memory_ngoals.append( Tensor(self.capacity, goal_dim[ii]))
             self.memory_nstates.append( Tensor(self.capacity, state_dim[ii]))
-        self.memory_acts = Tensor(self.n_agents, self.capacity)
+            self.memory_acts.append( Tensor(self.capacity, *(act_dim[ii])))
         self.memory_rwds = Tensor(self.n_agents, self.capacity)
         self.memory_dones = Tensor(self.n_agents, self.capacity)
 
@@ -44,7 +45,7 @@ class ReplayBuffer:
             self.memory_states[ii][store_index] = Tensor(states[ii])
             self.memory_ngoals[ii][store_index] = Tensor(ngoals[ii])
             self.memory_nstates[ii][store_index] = Tensor(nstates[ii])
-        self.memory_acts[:,store_index] = Tensor(acts)
+            self.memory_acts[ii][store_index] = Tensor(acts[ii])
         self.memory_rwds[:,store_index] = Tensor(rwds)
         self.memory_dones[:,store_index] = Tensor(dones)
         

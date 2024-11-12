@@ -1,0 +1,15 @@
+{"time":"2024-11-12T20:38:11.217161121+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T20:38:11.217181258+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_203811-vntvtkx9/logs/debug-core.log"}
+{"time":"2024-11-12T20:38:11.320923691+05:30","level":"INFO","msg":"created new stream","id":"vntvtkx9"}
+{"time":"2024-11-12T20:38:11.320970831+05:30","level":"INFO","msg":"stream: started","id":"vntvtkx9"}
+{"time":"2024-11-12T20:38:11.321669711+05:30","level":"INFO","msg":"sender: started","stream_id":"vntvtkx9"}
+{"time":"2024-11-12T20:38:11.321113553+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"vntvtkx9"}}
+{"time":"2024-11-12T20:38:11.321401233+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"vntvtkx9"}}
+{"time":"2024-11-12T20:38:11.338999486+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T20:38:11.854169367+05:30","level":"INFO","msg":"stream: closing","id":"vntvtkx9"}
+{"time":"2024-11-12T20:38:11.854200676+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T20:38:11.854635374+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T20:38:11.854764531+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"vntvtkx9"}}
+{"time":"2024-11-12T20:38:11.854778875+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"vntvtkx9"}}
+{"time":"2024-11-12T20:38:11.854829435+05:30","level":"INFO","msg":"sender: closed","stream_id":"vntvtkx9"}
+{"time":"2024-11-12T20:38:11.854836047+05:30","level":"INFO","msg":"stream: closed","id":"vntvtkx9"}

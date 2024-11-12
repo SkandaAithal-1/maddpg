@@ -1,0 +1,8 @@
+{"time":"2024-11-12T22:51:53.641917206+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T22:51:53.641936704+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_225153-0yai4mvr/logs/debug-core.log"}
+{"time":"2024-11-12T22:51:53.745417916+05:30","level":"INFO","msg":"created new stream","id":"0yai4mvr"}
+{"time":"2024-11-12T22:51:53.745465818+05:30","level":"INFO","msg":"stream: started","id":"0yai4mvr"}
+{"time":"2024-11-12T22:51:53.745531223+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"0yai4mvr"}}
+{"time":"2024-11-12T22:51:53.745628489+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"0yai4mvr"}}
+{"time":"2024-11-12T22:51:53.745630237+05:30","level":"INFO","msg":"sender: started","stream_id":"0yai4mvr"}
+{"time":"2024-11-12T22:51:53.762801021+05:30","level":"INFO","msg":"Starting system monitor"}

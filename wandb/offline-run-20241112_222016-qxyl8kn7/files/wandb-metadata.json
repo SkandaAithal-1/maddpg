@@ -1,0 +1,59 @@
+{
+  "os": "Linux-6.8.0-48-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12",
+  "startedAt": "2024-11-12T16:50:16.163243Z",
+  "args": [
+    "--env",
+    "grid_world",
+    "--warmup_episodes",
+    "0",
+    "--replay_buffer_size",
+    "2000",
+    "--total_steps",
+    "2000000",
+    "--eval_freq",
+    "10000",
+    "--max_episode_length",
+    "100",
+    "--train_repeats",
+    "1",
+    "--batch_size",
+    "512",
+    "--gradient_estimator",
+    "gst",
+    "--gst_gap",
+    "0.7",
+    "--user_name",
+    "aithalskanda66",
+    "--wandb_project_name",
+    "InterIIT",
+    "--log_grad_variance",
+    "--offline_wandb"
+  ],
+  "program": "/home/skanda/InterIIT/MADDPG/maddpg/main.py",
+  "codePath": "main.py",
+  "git": {
+    "remote": "git@github.com:SkandaAithal-1/maddpg.git",
+    "commit": "8b95bb2c0d94bb121b972004cb74497e6261eebf"
+  },
+  "root": "/home/skanda/InterIIT/MADDPG/maddpg",
+  "host": "skanda-VivoBook-ASUSLaptop-X712EA-X712EA",
+  "username": "skanda",
+  "executable": "/usr/bin/python",
+  "codePathLocal": "main.py",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "161462837248",
+      "used": "117018636288"
+    }
+  },
+  "memory": {
+    "total": "16451239936"
+  },
+  "cpu": {
+    "count": 4,
+    "countLogical": 8
+  }
+}

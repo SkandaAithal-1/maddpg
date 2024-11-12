@@ -1,0 +1,15 @@
+{"time":"2024-11-12T21:02:02.64242846+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T21:02:02.642453096+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_210202-kab4xpri/logs/debug-core.log"}
+{"time":"2024-11-12T21:02:02.746838084+05:30","level":"INFO","msg":"created new stream","id":"kab4xpri"}
+{"time":"2024-11-12T21:02:02.746914002+05:30","level":"INFO","msg":"stream: started","id":"kab4xpri"}
+{"time":"2024-11-12T21:02:02.747083048+05:30","level":"INFO","msg":"sender: started","stream_id":"kab4xpri"}
+{"time":"2024-11-12T21:02:02.747070366+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"kab4xpri"}}
+{"time":"2024-11-12T21:02:02.747092644+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"kab4xpri"}}
+{"time":"2024-11-12T21:02:02.763169224+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T21:02:02.939331062+05:30","level":"INFO","msg":"stream: closing","id":"kab4xpri"}
+{"time":"2024-11-12T21:02:02.939387111+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T21:02:02.940044975+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T21:02:02.940357546+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"kab4xpri"}}
+{"time":"2024-11-12T21:02:02.940392882+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"kab4xpri"}}
+{"time":"2024-11-12T21:02:02.940431357+05:30","level":"INFO","msg":"sender: closed","stream_id":"kab4xpri"}
+{"time":"2024-11-12T21:02:02.940478223+05:30","level":"INFO","msg":"stream: closed","id":"kab4xpri"}

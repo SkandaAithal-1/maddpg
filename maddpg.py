@@ -27,7 +27,7 @@ class MADDPG:
         self.n_agents = env.n_agents
         self.gamma = gamma
         obs_dims = [obs.shape[0] for obs in env.observation_space]
-        act_dims = [act.n for act in env.action_space]
+        act_dims = [act.shape[1] for act in env.action_space]
         self.agents = [
             Agent(
                 agent_idx=ii,
@@ -139,6 +139,6 @@ class MADDPG:
         for agent in self.agents:
             agent.soft_update()
 
-        self.gradient_estimator.update_state() # Update GE state, if necessary
+        # self.gradient_estimator.update_state() # Update GE state, if necessary
 
         return info 

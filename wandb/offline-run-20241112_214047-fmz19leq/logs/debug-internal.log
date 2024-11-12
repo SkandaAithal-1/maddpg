@@ -1,0 +1,15 @@
+{"time":"2024-11-12T21:40:47.363109264+05:30","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T21:40:47.363126842+05:30","level":"INFO","msg":"created symlink","path":"/home/skanda/InterIIT/MADDPG/maddpg/wandb/offline-run-20241112_214047-fmz19leq/logs/debug-core.log"}
+{"time":"2024-11-12T21:40:47.467704784+05:30","level":"INFO","msg":"created new stream","id":"fmz19leq"}
+{"time":"2024-11-12T21:40:47.467769163+05:30","level":"INFO","msg":"stream: started","id":"fmz19leq"}
+{"time":"2024-11-12T21:40:47.467872827+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"fmz19leq"}}
+{"time":"2024-11-12T21:40:47.468009298+05:30","level":"INFO","msg":"sender: started","stream_id":"fmz19leq"}
+{"time":"2024-11-12T21:40:47.468045289+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"fmz19leq"}}
+{"time":"2024-11-12T21:40:47.484644222+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T21:40:48.77714031+05:30","level":"INFO","msg":"stream: closing","id":"fmz19leq"}
+{"time":"2024-11-12T21:40:48.777175505+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T21:40:48.777671005+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T21:40:48.777811737+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"fmz19leq"}}
+{"time":"2024-11-12T21:40:48.777829123+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"fmz19leq"}}
+{"time":"2024-11-12T21:40:48.777837463+05:30","level":"INFO","msg":"sender: closed","stream_id":"fmz19leq"}
+{"time":"2024-11-12T21:40:48.777874247+05:30","level":"INFO","msg":"stream: closed","id":"fmz19leq"}
